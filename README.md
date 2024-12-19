@@ -50,12 +50,12 @@ npx shadcn@latest add input label button select card badge calendar avatar check
 
 ```
 
-### Anser some questions
+### Some questions
 
-You need to create a components.json file to add components. Proceed? => yes
-√ Which style would you like to use? » New York
-√ Which color would you like to use as the base color? » Slate
-√ Would you like to use CSS variables for theming? ... no / yes => Yes
+1. You need to create a components.json file to add components. Proceed? => yes
+2. √ Which style would you like to use? » New York
+3. √ Which color would you like to use as the base color? » Slate
+4. √ Would you like to use CSS variables for theming? ... no / yes => Yes
 
 ### For How would you like to proceed?
 
