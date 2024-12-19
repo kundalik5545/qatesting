@@ -49,3 +49,16 @@ export default function RootLayout({ children }) {
 npx shadcn@latest add input label button select card badge calendar avatar checkbox drawer dropdown-menu popover progress switch table tooltip sonner
 
 ```
+
+### Anser some questions
+
+You need to create a components.json file to add components. Proceed? => yes
+√ Which style would you like to use? » New York
+√ Which color would you like to use as the base color? » Slate
+√ Would you like to use CSS variables for theming? ... no / yes => Yes
+
+### For How would you like to proceed?
+
+```
+--legacy-peer-deps
+```
