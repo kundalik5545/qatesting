@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { text_BoxTC } from "@/data/textBoxTC";
+import { text_BoxTC } from "@/data/elementsTestCases";
 
 import React, { useState } from "react";
 
