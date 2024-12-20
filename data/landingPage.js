@@ -1,8 +1,5 @@
 import {
-  BarChart3,
   Receipt,
-  PieChart,
-  CreditCard,
   Globe,
   Zap,
   Unlink2,
@@ -11,6 +8,8 @@ import {
   Cpu,
   Megaphone,
   LayoutDashboard,
+  Monitor,
+  Telescope,
 } from "lucide-react";
 
 // Stats Data
@@ -37,33 +36,39 @@ export const statsData = [
 export const featuresData = [
   {
     icon: <Unlink2 className="h-8 w-8 text-blue-600" />,
+    to: "/elements",
     title: "Elements",
     description:
       "Get detailed insights into your spending patterns with AI-powered analytics",
   },
   {
     icon: <Receipt className="h-8 w-8 text-blue-600" />,
+    to: "/forms",
     title: "Forms",
     description:
       "Extract data automatically from receipts using advanced AI technology",
   },
   {
     icon: <Megaphone className="h-8 w-8 text-blue-600" />,
+    to: "/alert-window",
     title: "Alerts & Window",
     description: "Create and manage budgets with intelligent recommendations",
   },
   {
     icon: <LayoutDashboard className="h-8 w-8 text-blue-600" />,
+    to: "/widget",
     title: "Widget",
     description: "Manage multiple accounts and credit cards in one place",
   },
   {
-    icon: <Globe className="h-8 w-8 text-blue-600" />,
+    icon: <Zap className="h-8 w-8 text-blue-600" />,
+    to: "/interactions",
     title: "Interactions",
     description: "Support for multiple currencies with real-time conversion",
   },
   {
-    icon: <Zap className="h-8 w-8 text-blue-600" />,
+    icon: <Globe className="h-8 w-8 text-blue-600" />,
+    to: "/websites",
     title: "Websites",
     description: "Get automated financial insights and recommendations",
   },
@@ -72,22 +77,22 @@ export const featuresData = [
 // How It Works Data
 export const howItWorksData = [
   {
-    icon: <User className="h-8 w-8 text-blue-600" />,
-    title: "1. Create Your Account",
+    icon: <Monitor className="h-8 w-8 text-blue-600" />,
+    title: "1. Select and Set Up a Framework",
     description:
-      "Get started in minutes with our simple and secure sign-up process",
+      "Begin your journey in minutes with our straightforward and user-friendly setup guides.",
   },
   {
-    icon: <CheckCheckIcon className="h-8 w-8 text-blue-600" />,
-    title: "2. Check automation test cases",
+    icon: <Telescope className="h-8 w-8 text-blue-600" />,
+    title: "2. Explore a Topic of Your Choice",
     description:
-      "Automatically categorize and track your transactions in real-time",
+      "Practice any topic at your convenience. We provide detailed test cases and comprehensive solutions.",
   },
   {
-    icon: <Cpu className="h-8 w-8 text-blue-600" />,
+    icon: <Zap className="h-8 w-8 text-blue-600" />,
     title: "3. Start Practicing",
     description:
-      "Receive AI-powered insights and recommendations to optimize your finances",
+      "Begin testing with confidence. If you encounter challenges, our solutions are readily available on GitHub.",
   },
 ];
 

@@ -7,6 +7,7 @@ import {
   statsData,
   testimonialsData,
 } from "@/data/landingPage";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -42,13 +43,15 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuresData.map((feature, index) => (
               <Card className="p-6" key={index}>
-                <CardContent className="space-y-4 pt-4">
-                  <h3 className="text-xl font-semibold flex items-center gap-3">
-                    {feature.icon}
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
+                <Link href={feature.to}>
+                  <CardContent className="space-y-4 pt-4">
+                    <h3 className="text-xl font-semibold flex items-center gap-3">
+                      {feature.icon}
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Link>
               </Card>
             ))}
           </div>

@@ -23,8 +23,10 @@ export default function RootLayout({ children }) {
         {/* footer */}
         <footer className="bg-blue-50 py-12">
           <div className="container mx-auto px-4 text-center text-gray-600">
-            <p>Made with 💖 by Coder Jk..</p>
-            <p>&copy;2024 All Rights Reserved.</p>
+            <p className="text-base lg:text-xl">Made with 💖 by Coder Jk..</p>
+            <p className="text-base lg:text-xl">
+              &copy;2024 All Rights Reserved.
+            </p>
           </div>
         </footer>
       </body>

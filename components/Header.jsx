@@ -1,7 +1,26 @@
-import { Bot } from "lucide-react";
+"use client";
+
+import { Bot, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { Button } from "./ui/button";
+import SheetOpen from "./NavbarSheet";
 
 const Header = () => {
   return (
@@ -11,10 +30,43 @@ const Header = () => {
           <Bot size={30} />
           <span className="text-2xl font-semibold">QA Testing</span>
         </Link>
-        <div className="flex items-center justify-between space-x-2">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/about-us"}>About-Us</Link>
-          <Link href={"/blog"}>Blog</Link>
+        <SheetOpen>
+          <Menu className="inline lg:hidden" />
+        </SheetOpen>
+        <div className=" hidden  lg:flex items-center justify-between space-x-2">
+          <div className="flex items-center justify-between space-x-2">
+            <Link href={"/"} className="">
+              <Button variant="default">Home</Button>
+            </Link>
+            <Link href={"/blog"}>
+              <Button variant="default">Blog</Button>
+            </Link>
+            <Link href={"/about-us"}>
+              <Button variant="default">About-Us</Button>
+            </Link>
+          </div>
+
+          <div className="">
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <Button variant="default" size="lg">
+                  Practice
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <Link href={"/elements"}>
+                  <DropdownMenuItem>Elements</DropdownMenuItem>
+                </Link>
+                <Link href={"/forms"}>
+                  <DropdownMenuItem>Forms</DropdownMenuItem>
+                </Link>
+                <DropdownMenuItem>Alert & Window</DropdownMenuItem>
+                <DropdownMenuItem>Widget</DropdownMenuItem>
+                <DropdownMenuItem>Interactions</DropdownMenuItem>
+                <DropdownMenuItem>Websites</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </nav>
     </div>

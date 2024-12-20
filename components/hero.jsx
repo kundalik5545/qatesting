@@ -21,7 +21,7 @@ const HeroSection = () => {
               Get Started
             </Button>
           </Link>
-          <Link href="https://www.youtube.com/@onlycodematters">
+          <Link href="https://www.youtube.com/@qatesting-app">
             <Button size="lg" variant="outline" className="px-8">
               Watch Demo
             </Button>
