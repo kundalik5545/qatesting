@@ -1,7 +1,7 @@
 import React from "react";
 
-const page = () => {
-  return <div>page</div>;
+const UploadDownloadPage = () => {
+  return <div>UploadDownloadPage</div>;
 };
 
-export default page;
+export default UploadDownloadPage;

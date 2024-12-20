@@ -4,7 +4,7 @@ const ButtonPage = () => {
   return (
     <div>
       <div className="text-base">first button</div>
-      <h1>Heloo</h1>
+      <h1>Button</h1>
     </div>
   );
 };

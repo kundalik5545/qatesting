@@ -4,10 +4,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import ElementsPage from "./page";
-import ButtonPage from "./button/page";
 
-const Elementslayout = () => {
+const Elementslayout = ({ children }) => {
   const pathname = usePathname();
 
   const navLinks = [
@@ -21,10 +19,11 @@ const Elementslayout = () => {
   ];
 
   return (
-    <div>
-      <div className="px-5">
+    <div className="container flex space-x-8">
+      <div className="flex flex-col">
         <h1 className="text-6xl font-bold gradient-title mb-5">Elements</h1>
-        <div className="flex items-center gap-3">
+
+        <div className="flex flex-col items-start gap-3 flex-wrap justify-center">
           {navLinks.map(({ href, label }) => (
             <Link key={href} href={href}>
               <Button
@@ -41,6 +40,8 @@ const Elementslayout = () => {
           ))}
         </div>
       </div>
+
+      <div className="pt-5">{children}</div>
     </div>
   );
 };

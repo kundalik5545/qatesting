@@ -1,7 +1,7 @@
 import React from "react";
 
-const page = () => {
-  return <div>page</div>;
+const LinksPage = () => {
+  return <div>LinksPage</div>;
 };
 
-export default page;
+export default LinksPage;
