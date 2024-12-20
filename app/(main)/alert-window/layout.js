@@ -9,19 +9,17 @@ const Elementslayout = ({ children }) => {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: "/elements/text-box", label: "Text Box" },
-    { href: "/elements/check-box", label: "Check Box" },
-    { href: "/elements/radio-button", label: "Radio Button" },
-    { href: "/elements/button", label: "Button" },
-    { href: "/elements/links", label: "Links" },
-    { href: "/elements/dynamic-properties", label: "Dynamic Properties" },
-    { href: "/elements/upload-download", label: "Upload and Download" },
+    { href: "/alert-window/browser-window", label: "Browser Windows" },
+    { href: "/alert-window/alerts", label: "Alerts" },
+    { href: "/alert-window/frames", label: "Frames" },
+    { href: "/alert-window/nested-frames", label: "Nested Frames" },
+    { href: "/alert-window/modal-dialogs", label: "Modal Dialogs" },
   ];
 
   return (
     <div className="container flex space-x-8">
       <div className="flex flex-col">
-        <h1 className="text-6xl font-bold gradient-title mb-5">Elements</h1>
+        <h1 className="text-6xl font-bold gradient-title mb-5">Alert</h1>
 
         <div className="flex flex-col items-start gap-3 flex-wrap justify-start">
           {navLinks.map(({ href, label }) => (

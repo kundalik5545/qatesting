@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, Menu } from "lucide-react";
+import { ArrowDown, Bot, ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -50,7 +50,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Button variant="default" size="lg">
-                  Practice
+                  Practice <ChevronDown />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -60,7 +60,9 @@ const Header = () => {
                 <Link href={"/forms"}>
                   <DropdownMenuItem>Forms</DropdownMenuItem>
                 </Link>
-                <DropdownMenuItem>Alert & Window</DropdownMenuItem>
+                <Link href={"/alert-window"}>
+                  <DropdownMenuItem>Alert & Window</DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem>Widget</DropdownMenuItem>
                 <DropdownMenuItem>Interactions</DropdownMenuItem>
                 <DropdownMenuItem>Websites</DropdownMenuItem>
