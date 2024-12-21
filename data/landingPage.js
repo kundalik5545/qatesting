@@ -36,33 +36,33 @@ export const statsData = [
 export const featuresData = [
   {
     icon: <Unlink2 className="h-8 w-8 text-blue-600" />,
-    to: "/elements",
+    to: "/elements/text-box",
     title: "Elements",
     description:
       "Get detailed insights into your spending patterns with AI-powered analytics",
   },
   {
     icon: <Receipt className="h-8 w-8 text-blue-600" />,
-    to: "/forms",
+    to: "/forms/basic-details",
     title: "Forms",
     description:
       "Extract data automatically from receipts using advanced AI technology",
   },
   {
     icon: <Megaphone className="h-8 w-8 text-blue-600" />,
-    to: "/alert-window",
+    to: "/alert-window/browser-window",
     title: "Alerts & Window",
     description: "Create and manage budgets with intelligent recommendations",
   },
   {
     icon: <LayoutDashboard className="h-8 w-8 text-blue-600" />,
-    to: "/widget",
+    to: "/widget/basic-details",
     title: "Widget",
     description: "Manage multiple accounts and credit cards in one place",
   },
   {
     icon: <Zap className="h-8 w-8 text-blue-600" />,
-    to: "/interactions",
+    to: "/interactions/basic-details",
     title: "Interactions",
     description: "Support for multiple currencies with real-time conversion",
   },

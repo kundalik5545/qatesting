@@ -20,7 +20,7 @@ const Elementslayout = ({ children }) => {
     <div className="container flex flex-col md:flex-row p-4 gap-3 md:gap-5">
       <div className="flex flex-col">
         <h1 className="text-6xl font-bold gradient-title mb-5">
-          <Link href={"/alert-window"}>Alert</Link>
+          <Link href={"/alert-window/browser-window"}>Alert</Link>
         </h1>
 
         <div className="flex md:flex-col items-start gap-3 flex-wrap justify-start">

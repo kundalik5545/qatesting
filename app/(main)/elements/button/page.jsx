@@ -34,7 +34,7 @@ const ButtonPage = () => {
       <h1 className="gradient-subTitle text-3xl">Button</h1>
 
       {/* Main Section */}
-      <section className="max-w-3xl border p-4 shadow-md rounded-md flex gap-5">
+      <section className="max-w-3xl border p-4 shadow-md rounded-md flex flex-wrap gap-5">
         <Button onDoubleClick={handleDoubleClick} id="double-click">
           Double Click Me
         </Button>

@@ -1,28 +1,32 @@
 "use client";
 
-import { ArrowDown, Bot, ChevronDown, Menu } from "lucide-react";
-import Image from "next/image";
+import { Bot, ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
+import React from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import SheetOpen from "./NavbarSheet";
 
 const Header = () => {
+  const allMainNavLinks = [
+    { to: "/", linkText: "Home" },
+    { to: "/blog", linkText: "Blog" },
+    { to: "/about-us", linkText: "About-Us" },
+  ];
+
+  const allNavLinks = [
+    { to: "/elements/text-box", linkText: "Elemnets" },
+    { to: "/forms/basic-details", linkText: "Forms" },
+    { to: "/alert-window/browser-window", linkText: "Alert-window" },
+    { to: "/widget/basic-details", linkText: "Widget" },
+    { to: "/interactions/basic-details", linkText: "Interactions" },
+  ];
+
   return (
     <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -35,18 +39,14 @@ const Header = () => {
         </SheetOpen>
         <div className=" hidden  lg:flex items-center justify-between space-x-2">
           <div className="flex items-center justify-between space-x-2">
-            <Link href={"/"} className="">
-              <Button variant="default">Home</Button>
-            </Link>
-            <Link href={"/blog"}>
-              <Button variant="default">Blog</Button>
-            </Link>
-            <Link href={"/about-us"}>
-              <Button variant="default">About-Us</Button>
-            </Link>
+            {allMainNavLinks.map((links, i) => (
+              <Link href={links.to} className="" key={i}>
+                <Button variant="default">{links.linkText}</Button>
+              </Link>
+            ))}
           </div>
 
-          <div className="">
+          <div>
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Button variant="default" size="lg">
@@ -54,18 +54,11 @@ const Header = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <Link href={"/elements"}>
-                  <DropdownMenuItem>Elements</DropdownMenuItem>
-                </Link>
-                <Link href={"/forms"}>
-                  <DropdownMenuItem>Forms</DropdownMenuItem>
-                </Link>
-                <Link href={"/alert-window"}>
-                  <DropdownMenuItem>Alert & Window</DropdownMenuItem>
-                </Link>
-                <DropdownMenuItem>Widget</DropdownMenuItem>
-                <DropdownMenuItem>Interactions</DropdownMenuItem>
-                <DropdownMenuItem>Websites</DropdownMenuItem>
+                {allNavLinks.map((links, i) => (
+                  <Link href={links.to} key={i}>
+                    <DropdownMenuItem>{links.linkText}</DropdownMenuItem>
+                  </Link>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
