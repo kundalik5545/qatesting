@@ -6,8 +6,41 @@ import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Qa Testing",
-  description: "Practice Automation Testing.",
+  title: "QA Testing - Practice Automation Testing Playground",
+  description:
+    "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
+  keywords: [
+    "QA Automation Practice Website",
+    "QA Testing Practice",
+    "Automation Testing",
+    "Selenium",
+    "demoqa",
+    "Practice automation testing",
+    "Selenium Automation Testing",
+  ],
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1",
+  openGraph: {
+    title: "QA Testing Practice - Automation Testing Playground",
+    description:
+      "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
+    url: "https://qatesting.vercel.app/",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 800,
+        height: 600,
+        alt: "QA Testing Playground Overview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QA Testing Practice - Automation Testing Playground",
+    description:
+      "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
