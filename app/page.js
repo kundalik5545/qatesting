@@ -16,6 +16,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero section  */}
+
       <HeroSection />
 
       {/* Stats Section */}

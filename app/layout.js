@@ -19,7 +19,6 @@ export const metadata = {
     "Selenium Automation Testing",
   ],
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     title: "QA Testing Practice - Automation Testing Playground",
     description:
@@ -48,6 +47,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={` ${inter.className}`}>
         {/* header/ Navbar */}
+        <head>
+          <meta
+            name="google-site-verification"
+            content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
+          />
+        </head>
         <Header />
 
         <main className="min-h-screen">{children}</main>
