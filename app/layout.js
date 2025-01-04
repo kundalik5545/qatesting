@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import Header from "@/components/Header";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,20 +46,38 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={` ${inter.className}`}>
-        {/* header/ Navbar */}
-        <head>
-          <meta
-            name="google-site-verification"
-            content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
-          />
-        </head>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
+        />
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ffffgggsss"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-ffffgggsss');
+          `}
+        </Script>
+      </head>
+      <body className={inter.className}>
+        {/* Header/Navbar */}
         <Header />
 
+        {/* Main Content */}
         <main className="min-h-screen">{children}</main>
+
+        {/* Toaster Notifications */}
         <Toaster richColors />
 
-        {/* footer */}
+        {/* Footer */}
         <footer className="bg-blue-50 py-12">
           <div className="container mx-auto px-4 text-center text-gray-600">
             <p className="text-base lg:text-xl">Made with 💖 by Coder Jk..</p>
