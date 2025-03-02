@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: `https://${process.env.NEXT_PUBLIC_WEBSITE_URL}/sitemap.xml`,
+    sitemap: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/sitemap.xml`,
   };
 }
