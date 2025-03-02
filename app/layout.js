@@ -3,6 +3,8 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import Header from "@/components/Header";
 import Script from "next/script";
+import { ThemeProvider } from "@/components/lib/theme-provider";
+import Footer from "@/components/lib/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,24 +70,25 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body className={inter.className}>
-        {/* Header/Navbar */}
-        <Header />
-
-        {/* Main Content */}
-        <main className="min-h-screen">{children}</main>
-
-        {/* Toaster Notifications */}
-        <Toaster richColors />
-
-        {/* Footer */}
-        <footer className="bg-blue-50 py-12">
-          <div className="container mx-auto px-4 text-center text-gray-600">
-            <p className="text-base lg:text-xl">Made with 💖 by Coder Jk..</p>
-            <p className="text-base lg:text-xl">
-              &copy;2024 All Rights Reserved.
-            </p>
-          </div>
-        </footer>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* Header/Navbar */}
+          <Header />
+          {/* Main Content */}
+          <main className="container mx-auto py-3 max-w-7xl min-h-screen">
+            {children}
+          </main>
+          {/* Toaster Notifications */}
+          <Toaster richColors />
+          {/* Footer */}
+          <footer>
+            <Footer />
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

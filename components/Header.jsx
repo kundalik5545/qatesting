@@ -11,12 +11,12 @@ import {
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import SheetOpen from "./NavbarSheet";
+import { ModeToggle } from "./lib/Mode-toggle";
 
 const Header = () => {
   const allMainNavLinks = [
     { to: "/", linkText: "Home" },
-    { to: "/blog", linkText: "Blog" },
-    { to: "/about-us", linkText: "About-Us" },
+    { to: "https://random-coders.vercel.app", linkText: "Blog" },
   ];
 
   const allNavLinks = [
@@ -28,7 +28,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <div className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href={"/"} className="flex items-center justify-around gap-2">
           <Bot size={30} />
@@ -61,6 +61,9 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+          </div>
+          <div className="">
+            <ModeToggle />
           </div>
         </div>
       </nav>

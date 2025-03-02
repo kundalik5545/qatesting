@@ -7,7 +7,6 @@ import {
   statsData,
   testimonialsData,
 } from "@/data/landingPage";
-import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -120,7 +119,7 @@ const LandingPage = () => {
             Join thousands of users who are already practicing automationg
             testing with Qa Testing.
           </p>
-          <Link href="/dashboard">
+          <Link href="/elements/text-box">
             <Button
               size="lg"
               className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce"

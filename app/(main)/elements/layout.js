@@ -31,8 +31,8 @@ const Elementslayout = ({ children }) => {
               <Button
                 className={
                   pathname === href
-                    ? "text-white hover:shadow-md"
-                    : " text-black-400 bg-white hover:bg-white hover:shadow-md"
+                    ? "text-white hover:shadow-md dark:text-black"
+                    : " text-black-400 bg-white/80 dark:text-black hover:bg-white hover:shadow-md"
                 }
                 variant="default"
               >

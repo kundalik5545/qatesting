@@ -16,12 +16,12 @@ const HeroSection = () => {
           and boost your testing skills to the next level!
         </p>
         <div className="flex items-center justify-center space-x-4">
-          <Link href="/dashboard">
+          <Link href="/elements/text-box">
             <Button size="lg" className="px-8">
               Get Started
             </Button>
           </Link>
-          <Link href="https://www.youtube.com/@qatesting-app">
+          <Link href="https://www.youtube.com/@qatesting-demo">
             <Button size="lg" variant="outline" className="px-8">
               Watch Demo
             </Button>
