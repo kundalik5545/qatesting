@@ -9,17 +9,20 @@ import Footer from "@/components/lib/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "QA Testing - Practice Automation Testing Playground",
-  description:
-    "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
+  title: {
+    default: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Qa Playground`,
+    template: `%s | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
+  },
+  description: `${process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION}`,
   keywords: [
-    "QA Automation Practice Website",
+    "qa playground",
+    "Practice automation testing",
+    "website to practice automtion testing",
     "QA Testing Practice",
     "Automation Testing",
     "Selenium",
     "demoqa",
-    "Practice automation testing",
-    "Selenium Automation Testing",
+    "qa testing",
   ],
   robots: "index, follow",
   openGraph: {
