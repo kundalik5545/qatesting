@@ -57,15 +57,17 @@ export default function RootLayout({ children }) {
           content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
         />
         {/* Google Ads */}
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9803190596877704"
-          crossorigin="anonymous"
-        ></script>
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
         {/* Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-BXX24P81G3"
+          strategy="lazyOnload"
         />
         <Script id="google-analytics">
           {`
