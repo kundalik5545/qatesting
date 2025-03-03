@@ -56,6 +56,12 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
         />
+        {/* Google Ads */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9803190596877704"
+          crossorigin="anonymous"
+        ></script>
         {/* Google Analytics */}
         <Script
           async
