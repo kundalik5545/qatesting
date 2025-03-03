@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Qa Playground`,
+    default: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Practice automation testing`,
     template: `%s | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
   },
   description: `${process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION}`,
@@ -22,7 +22,15 @@ export const metadata = {
     "Automation Testing",
     "Selenium",
     "demoqa",
-    "qa testing",
+    "automation testing practice websites",
+    "automation testing practice websites free",
+    "dummy sites for testing",
+    "best automation testing practice websites",
+    "selenium automation practice websites",
+    "dummy sites for manual testing",
+    "manual testing practice websites free",
+    "test automation practice blogspot",
+    "automation demo site for selenium",
   ],
   robots: "index, follow",
   openGraph: {
@@ -45,6 +53,9 @@ export const metadata = {
     description:
       "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
     images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://qatesting.vercel.app",
   },
 };
 
@@ -89,12 +100,15 @@ export default function RootLayout({ children }) {
         >
           {/* Header/Navbar */}
           <Header />
+
           {/* Main Content */}
           <main className="container mx-auto py-3 max-w-7xl min-h-screen">
             {children}
           </main>
+
           {/* Toaster Notifications */}
           <Toaster richColors />
+
           {/* Footer */}
           <footer>
             <Footer />

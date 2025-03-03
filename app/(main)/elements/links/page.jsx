@@ -190,7 +190,7 @@ const LinksPage = () => {
         <Link href="/" className="text-blue-600 underline">
           Home
         </Link>
-        <Link href="/Aboutpage" className="text-blue-600 underline">
+        <Link href="/about-us" className="text-blue-600 underline">
           About Us
         </Link>
       </section>

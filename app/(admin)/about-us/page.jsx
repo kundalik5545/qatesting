@@ -1,9 +1,11 @@
 import React from "react";
 
 export const metadata = {
-  title: "About us",
+  title: "About QA Testing ",
   description:
     "QA Testing Playground is a hub for automation testers to practice and enhance their skills. Join our community to explore, contribute, and collaborate.",
+  keywords:
+    "qa testing, automation testing, automation testing practice websites, automation testing practice websites free,dummy sites for testing,best automation testing practice websites, selenium automation practice websites, dummy sites for manual testing, manual testing practice websites free, test automation practice blogspot, automation demo site for selenium",
 };
 
 const AboutPage = () => {
