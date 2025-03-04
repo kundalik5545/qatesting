@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Practice automation testing`,
+    default: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Automation Testing Playground`,
     template: `%s | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
   },
   description: `${process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION}`,
@@ -34,16 +34,16 @@ export const metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: "QA Testing Practice - Automation Testing Playground",
+    title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Automation Testing Playground`,
     description:
       "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
-    url: "https://qatesting.vercel.app/",
+    url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
     images: [
       {
         url: "/og-image.png",
         width: 800,
         height: 600,
-        alt: "QA Testing Playground Overview",
+        alt: `${process.env.NEXT_PUBLIC_WEBSITE_NAME}- Automation Playground`,
       },
     ],
   },
@@ -55,7 +55,7 @@ export const metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://qatesting.vercel.app",
+    canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
   },
 };
 

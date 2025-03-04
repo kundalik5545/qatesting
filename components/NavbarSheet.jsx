@@ -21,7 +21,7 @@ const SheetOpen = ({ children }) => {
         <SheetTrigger asChild>{children}</SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Qa Testing</SheetTitle>
+            <SheetTitle>{process.env.NEXT_PUBLIC_WEBSITE_NAME}</SheetTitle>
             <SheetDescription>
               <div className="flex flex-col space-y-2">
                 <Link href={"/"} className="">

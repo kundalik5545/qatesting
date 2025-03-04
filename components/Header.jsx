@@ -32,7 +32,9 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href={"/"} className="flex items-center justify-around gap-2">
           <Bot size={30} />
-          <span className="text-2xl font-semibold">QA Testing</span>
+          <span className="text-2xl font-semibold">
+            {process.env.NEXT_PUBLIC_WEBSITE_NAME}
+          </span>
         </Link>
         <SheetOpen>
           <Menu className="inline lg:hidden" />
