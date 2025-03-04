@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://qatesting.vercel.app/", // Replace with your site's URL
+  siteUrl: "https://www.qaplayground.com/", // Replace with your site's URL
   generateRobotsTxt: true, // Generate robots.txt file
 };
