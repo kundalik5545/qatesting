@@ -2,6 +2,14 @@ import { basicDetails } from "@/data/BasicSetting";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "Contact Us",
+  description: `${basicDetails.websiteDescription}`,
+  alternates: {
+    canonical: `${basicDetails.websiteURL}/contact-us`,
+  },
+};
+
 const ContactUsPage = () => {
   return (
     <div className="contact-us min-h-screen container mx-auto max-w-5xl text-foreground bg-background pt-5">

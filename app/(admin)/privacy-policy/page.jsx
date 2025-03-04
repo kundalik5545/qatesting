@@ -5,6 +5,9 @@ export const metadata = {
   title: { absolute: "Privacy Policy | Personal Finance" },
   description:
     "Read our Privacy Policy to understand how we collect, use, and protect your personal information when visiting our Personal Finance Blog.",
+  alternates: {
+    canonical: `${basicDetails.websiteURL}/privacy-policy`,
+  },
 };
 
 const PrivacyPolicy = () => {

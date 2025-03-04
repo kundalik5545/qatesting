@@ -18,3 +18,32 @@ export const socialHandles = {
   twitterId: "qaplayground",
   telegramId: "qaplayground",
 };
+
+export const pagesTitle = {
+  textBox: "Practice text box using selenium",
+  buttonPage: "Practice automation on buttons",
+  radioButtonPage: "Practice automation on Radio buttons",
+};
+
+export const pagesDescription = {
+  textBoxPage: "",
+  buttonPage: "Practice automation on buttons",
+  radioButtonPage:
+    "Test button interactions for automation testing. Simulate clicks, right-clicks, and double-clicks in real-time.",
+};
+export const pageKeywords = {
+  textBox: [
+    "qa playground",
+    "automation testing",
+    "text box testing",
+    "UI testing",
+    "interactive buttons",
+  ],
+  radioButtonPage: [
+    "qa playground",
+    "automation testing",
+    "text box testing",
+    "UI testing",
+    "interactive buttons",
+  ],
+};
