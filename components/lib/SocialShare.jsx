@@ -2,13 +2,12 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaTwitter, FaWhatsapp, FaTelegram } from "react-icons/fa";
 import { Button } from "../ui/button";
+import { basicDetails } from "@/data/BasicSetting";
 
 // Get environment variables
-const websiteUrl = encodeURIComponent(
-  process.env.NEXT_PUBLIC_WEBSITE_URL || ""
-);
+const websiteUrl = encodeURIComponent(basicDetails.websiteURL || "");
 const websiteDescription = encodeURIComponent(
-  process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION || "Check out this awesome blog!"
+  basicDetails.websiteDescription || "Check out this awesome blog!"
 );
 
 const socialMedia = [

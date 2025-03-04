@@ -1,3 +1,5 @@
+import { basicDetails } from "@/data/BasicSetting";
+
 export default function robots() {
   return {
     rules: {
@@ -5,6 +7,6 @@ export default function robots() {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/sitemap.xml`,
+    sitemap: `${basicDetails.websiteURL}/sitemap.xml`,
   };
 }

@@ -1,16 +1,15 @@
+import { basicDetails } from "@/data/BasicSetting";
 import Link from "next/link";
 import React from "react";
 
 const ContactUsPage = () => {
-  const contactEmail = "qa@automationtesting.com";
-
   return (
     <div className="contact-us min-h-screen container mx-auto max-w-5xl text-foreground bg-background pt-5">
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
       <blockquote className="italic">
         <p className="text-lg mb-4">
-          <strong>{process.env.NEXT_PUBLIC_WEBSITE_NAME}</strong> - 💡 Enhance
-          your testing skills with us!
+          <strong>{basicDetails.websiteName}</strong> - 💡 Enhance your testing
+          skills with us!
         </p>
         <p className="mb-4">
           A hub for testers seeking automation testing help, project ideas, and
@@ -32,7 +31,7 @@ const ContactUsPage = () => {
           Email:{" "}
           <Link
             className="underline text-blue-500"
-            href={`mailto:${contactEmail}`}
+            href={`mailto:${basicDetails.websiteEmail}`}
             aria-label="Contact QA via Email"
           >
             Contact QA
@@ -43,7 +42,7 @@ const ContactUsPage = () => {
         <p>Automation Testing Team...</p>
         <Link
           className="underline text-blue-500"
-          href={`mailto:${contactEmail}`}
+          href={`mailto:${basicDetails.websiteEmail}`}
           aria-label="Contact QA via Email"
         >
           Contact QA

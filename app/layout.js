@@ -5,15 +5,16 @@ import Header from "@/components/Header";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/lib/theme-provider";
 import Footer from "@/components/lib/Footer";
+import { basicDetails } from "@/data/BasicSetting";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Automation Testing Playground`,
-    template: `%s | ${process.env.NEXT_PUBLIC_WEBSITE_NAME}`,
+    default: `${basicDetails.websiteName} - Automation Testing Playground`,
+    template: `%s | ${basicDetails.websiteName}`,
   },
-  description: `${process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION}`,
+  description: `${basicDetails.websiteDescription}`,
   keywords: [
     "qa playground",
     "Practice automation testing",
@@ -34,16 +35,16 @@ export const metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: `${process.env.NEXT_PUBLIC_WEBSITE_NAME} - Automation Testing Playground`,
+    title: `${basicDetails.websiteName} - Automation Testing Playground`,
     description:
       "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
-    url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
+    url: `${basicDetails.websiteURL}`,
     images: [
       {
         url: "/og-image.png",
         width: 800,
         height: 600,
-        alt: `${process.env.NEXT_PUBLIC_WEBSITE_NAME}- Automation Playground`,
+        alt: `${basicDetails.websiteName}- Automation Playground`,
       },
     ],
   },
@@ -55,7 +56,7 @@ export const metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
+    canonical: `${basicDetails.websiteURL}`,
   },
 };
 

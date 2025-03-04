@@ -1,3 +1,4 @@
+import { basicDetails } from "@/data/BasicSetting";
 import Link from "next/link";
 
 export const metadata = {
@@ -13,12 +14,11 @@ const PrivacyPolicy = () => {
         <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
         <p className="mb-4">Effective Date: [25 Feb 2025]</p>
         <p className="mb-4">
-          Thank you for visiting{" "}
-          <strong>{process.env.NEXT_PUBLIC_WEBSITE_NAME}</strong> ("the Blog").
-          This Privacy Policy explains how we collect, use, and protect your
-          personal information when you visit our Blog. We are committed to
-          protecting your privacy and complying with applicable data protection
-          laws.
+          Thank you for visiting <strong>{basicDetails.websiteName}</strong>{" "}
+          ("the Blog"). This Privacy Policy explains how we collect, use, and
+          protect your personal information when you visit our Blog. We are
+          committed to protecting your privacy and complying with applicable
+          data protection laws.
         </p>
         <h2 className="text-2xl font-semibold mt-6">Information We Collect</h2>
         <ul className="list-disc pl-5 mb-4">
@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
           <br />
           <strong>Email:</strong>{" "}
           <Link
-            href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`}
+            href={`mailto:${basicDetails.websiteEmail}`}
             className="underline text-blue-500"
           >
             Admin Email

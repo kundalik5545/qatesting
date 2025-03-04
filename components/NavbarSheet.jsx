@@ -11,6 +11,7 @@ import {
 } from "./ui/sheet";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { basicDetails } from "@/data/BasicSetting";
 
 const SheetOpen = ({ children }) => {
   const [open, setOpen] = useState(false);
@@ -21,12 +22,12 @@ const SheetOpen = ({ children }) => {
         <SheetTrigger asChild>{children}</SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>{process.env.NEXT_PUBLIC_WEBSITE_NAME}</SheetTitle>
+            <SheetTitle>{basicDetails.websiteName}</SheetTitle>
             <SheetDescription>
               <div className="flex flex-col space-y-2">
                 <Link href={"/"} className="">
                   <Button
-                    variant="default"
+                    variant="ghost"
                     size="lg"
                     className="text-base text-left"
                   >
@@ -35,7 +36,7 @@ const SheetOpen = ({ children }) => {
                 </Link>
                 <Link href={"/blog"}>
                   <Button
-                    variant="default"
+                    variant="ghost"
                     size="lg"
                     className="text-base text-left"
                   >
@@ -44,7 +45,7 @@ const SheetOpen = ({ children }) => {
                 </Link>
                 <Link href={"/about-us"}>
                   <Button
-                    variant="default"
+                    variant="ghost"
                     size="lg"
                     className="text-base text-left"
                   >

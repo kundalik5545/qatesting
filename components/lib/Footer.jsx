@@ -1,6 +1,7 @@
 import React from "react";
 import SocialSharePage from "./SocialShare";
 import Link from "next/link";
+import { allUrls, basicDetails } from "@/data/BasicSetting";
 
 const Footer = () => {
   return (
@@ -11,21 +12,14 @@ const Footer = () => {
       <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
         {/* Column 1: Branding */}
         <div aria-label="Website Name and Description">
-          <h2 className="text-xl font-bold">
-            {process.env.NEXT_PUBLIC_WEBSITE_NAME}
-          </h2>
-          <p className="mt-2 text-base md:text-base">
-            {process.env.NEXT_PUBLIC_TAG_LINE}
-          </p>
+          <h2 className="text-xl font-bold">{basicDetails.websiteName}</h2>
+          <p className="mt-2 text-base md:text-base">{basicDetails.tagLine}</p>
         </div>
 
         {/* Column 2: Quick Links */}
         <nav aria-label="Footer Navigation" className="flex flex-col space-y-2">
           <h3 className="text-lg font-semibold">Quick Links</h3>
-          <Link
-            href="https://random-coders.vercel.app/"
-            className="hover:text-gray-200"
-          >
+          <Link href={allUrls.blogLink} className="hover:text-gray-200">
             Blog
           </Link>
           <Link href="/contact-us" className="hover:text-gray-200">
@@ -54,7 +48,7 @@ const Footer = () => {
         className="mt-6 border-t border-gray-300 pt-4 text-center text-sm"
         aria-label="Copy Rights Warning"
       >
-        {` © 2025 ${process.env.NEXT_PUBLIC_WEBSITE_NAME}. All Rights Reserved.`}
+        {` © 2025 ${basicDetails.websiteName}. All Rights Reserved.`}
       </div>
     </footer>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { allUrls } from "@/data/BasicSetting";
 
 const HeroSection = () => {
   return (
@@ -21,7 +22,7 @@ const HeroSection = () => {
               Get Started
             </Button>
           </Link>
-          <Link href="https://www.youtube.com/@qatesting-demo">
+          <Link href={allUrls.youtubeURL}>
             <Button size="lg" variant="outline" className="px-8">
               Watch Demo
             </Button>

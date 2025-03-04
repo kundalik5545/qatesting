@@ -1,3 +1,4 @@
+import { basicDetails } from "@/data/BasicSetting";
 import React from "react";
 
 export const metadata = {
@@ -15,8 +16,8 @@ const AboutPage = () => {
         <h1 className="text-3xl font-bold mb-4">About Us</h1>
         <blockquote className="italic">
           <p className="text-lg mb-4">
-            <strong>QA Testing Playground</strong> - 🛠️ Practice, learn, and
-            excel in automation testing!
+            <strong>{basicDetails.websiteName}</strong> - 🛠️ Practice, learn,
+            and excel in automation testing!
           </p>
           <p className="mb-4">
             A hub for automation testers seeking hands-on practice, project
@@ -31,7 +32,7 @@ const AboutPage = () => {
             tutorials, and hands-on projects to sharpen your expertise.
           </p>
           <p>By -</p>
-          <p>{process.env.NEXT_PUBLIC_WEBSITE_NAME}</p>
+          <p>{basicDetails.websiteName}</p>
         </blockquote>
       </div>
     </>

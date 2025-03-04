@@ -1,8 +1,9 @@
+import { basicDetails } from "@/data/BasicSetting";
 import { siteMapUrls } from "@/data/sitemap-links";
 
 export default async function sitemap() {
   const posts = siteMapUrls.map((link) => ({
-    url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${link.url}`,
+    url: `${basicDetails.websiteURL}/${link.url}`,
     // lastModified: new Date(),
     changeFrequency: "weekly",
     // priority: 0.5,
@@ -10,13 +11,13 @@ export default async function sitemap() {
 
   return [
     {
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/about-us`,
+      url: `${basicDetails.websiteURL}/about-us`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact-us`,
+      url: `${basicDetails.websiteURL}/contact-us`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/privacy-policy`,
+      url: `${basicDetails.websiteURL}/privacy-policy`,
     },
     ...posts,
   ];

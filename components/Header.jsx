@@ -12,11 +12,12 @@ import {
 import { Button } from "./ui/button";
 import SheetOpen from "./NavbarSheet";
 import { ModeToggle } from "./lib/Mode-toggle";
+import { basicDetails } from "@/data/BasicSetting";
 
 const Header = () => {
   const allMainNavLinks = [
     { to: "/", linkText: "Home" },
-    { to: "https://random-coders.vercel.app", linkText: "Blog" },
+    { to: `${basicDetails.websiteURL}`, linkText: "Blog" },
   ];
 
   const allNavLinks = [
@@ -33,7 +34,7 @@ const Header = () => {
         <Link href={"/"} className="flex items-center justify-around gap-2">
           <Bot size={30} />
           <span className="text-2xl font-semibold">
-            {process.env.NEXT_PUBLIC_WEBSITE_NAME}
+            {basicDetails.websiteName}
           </span>
         </Link>
         <SheetOpen>
