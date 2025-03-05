@@ -39,7 +39,6 @@ const TextBoxPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="gradient-subTitle text-3xl">{pagesTitle.textBox}</h2>
       <section className="grid grid-cols-1 max-w-3xl border p-4 shadow-md rounded-md">
         <form onSubmit={handleForm}>
           <div className="flex items-center justify-between space-y-2">

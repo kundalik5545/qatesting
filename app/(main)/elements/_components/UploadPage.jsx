@@ -1,6 +1,6 @@
 "use client";
 
-import { fileUploadTC } from "@/data/elementsTestCases";
+import { fileDownloadTC, fileUploadTC } from "@/data/elementsTestCases";
 import React, { useState } from "react";
 import {
   Table,
@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button";
 import { FileDown } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { pagesTitle } from "@/data/BasicSetting";
+
 const UploadDownloadPage = () => {
   const [fileName, setFileName] = useState();
   const [Class, setClass] = useState("hide");
@@ -24,7 +26,7 @@ const UploadDownloadPage = () => {
     <div>
       <div className="Page-Container max-w-5xl mx-auto">
         <h2 className="Page-Heading gradient-subTitle text-3xl">
-          Upload and Downloads
+          {pagesTitle.uploadDownloadPage}
         </h2>
         <hr />
 
@@ -78,7 +80,11 @@ const UploadDownloadPage = () => {
         <hr />
 
         {/* test case section */}
+        <h2 className="Page-Heading gradient-subTitle text-3xl pt-5">
+          Manual test cases for file upload and download.
+        </h2>
         <section className="max-w-3xl border p-4 shadow-md rounded-md my-4">
+          <h3>File Upload Test Cases</h3>
           <Table>
             <TableHeader>
               <TableRow>
@@ -88,6 +94,25 @@ const UploadDownloadPage = () => {
             </TableHeader>
             <TableBody>
               {fileUploadTC.map((ele, index) => (
+                <TableRow key={index}>
+                  <TableCell className="font-medium">{ele.TestId}</TableCell>
+                  <TableCell>{ele.TestCaseName}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </section>
+        <section className="max-w-3xl border p-4 shadow-md rounded-md my-4">
+          <h3>File Download Test Cases</h3>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[100px]">Test case Id</TableHead>
+                <TableHead>Test Case Name</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {fileDownloadTC.map((ele, index) => (
                 <TableRow key={index}>
                   <TableCell className="font-medium">{ele.TestId}</TableCell>
                   <TableCell>{ele.TestCaseName}</TableCell>

@@ -32,10 +32,6 @@ const ButtonPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto space-y-8">
-      <h2 className="gradient-subTitle text-3xl font-bold">
-        {pagesTitle.buttonPage}
-      </h2>
-
       {/* 🔹 Interactive Buttons Section */}
       <section className="max-w-3xl border p-4 shadow-md rounded-md flex flex-wrap gap-5">
         <Button

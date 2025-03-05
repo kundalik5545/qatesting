@@ -295,74 +295,140 @@ export const linksTC = [
 export const fileUploadTC = [
   {
     TestId: "TC01",
-    TestCaseName: "Verify that the accordion expands upon clicking a header",
+    TestCaseName: "Verify that a file can be selected for upload",
   },
   {
     TestId: "TC02",
-    TestCaseName:
-      "Verify that the accordion collapses upon clicking an expanded header",
+    TestCaseName: "Verify that the selected file name is displayed",
   },
   {
     TestId: "TC03",
     TestCaseName:
-      "Verify that only one accordion section is expanded at a time",
+      "Verify that the upload button is enabled after selecting a file",
   },
   {
     TestId: "TC04",
-    TestCaseName: "Verify the content of each accordion section upon expansion",
+    TestCaseName:
+      "Verify that the file upload starts upon clicking the upload button",
   },
   {
     TestId: "TC05",
-    TestCaseName:
-      "Verify that the accordion retains its state after a page refresh",
+    TestCaseName: "Verify the progress bar during file upload",
   },
   {
     TestId: "TC06",
     TestCaseName:
-      "Verify the responsiveness of the accordion on different screen sizes",
+      "Verify that a success message is displayed after file upload",
   },
   {
     TestId: "TC07",
-    TestCaseName:
-      "Verify that the accordion sections can be navigated using keyboard interactions",
+    TestCaseName: "Verify that the uploaded file is listed in the file list",
   },
   {
     TestId: "TC08",
-    TestCaseName: "Verify the smoothness of the expand/collapse animation",
+    TestCaseName:
+      "Verify that an error message is displayed for unsupported file types",
   },
   {
     TestId: "TC09",
     TestCaseName:
-      "Verify that the accordion headers are accessible via screen readers",
+      "Verify that an error message is displayed for files exceeding the size limit",
   },
   {
     TestId: "TC10",
-    TestCaseName:
-      "Verify that the content within an accordion section is interactable (e.g., links, buttons)",
+    TestCaseName: "Verify that the file upload can be canceled",
   },
   {
     TestId: "TC11",
     TestCaseName:
-      "Verify that the accordion collapses when clicking outside the accordion (if applicable)",
+      "Verify that the file upload resumes after a network interruption",
   },
   {
     TestId: "TC12",
-    TestCaseName:
-      "Verify the accessibility of the accordion for users with disabilities",
+    TestCaseName: "Verify that multiple files can be uploaded simultaneously",
   },
   {
     TestId: "TC13",
     TestCaseName:
-      "Verify that the accordion does not overlap with other page elements when expanded",
+      "Verify the responsiveness of the file upload component on different screen sizes",
   },
   {
     TestId: "TC14",
     TestCaseName:
-      "Verify the styling of the accordion headers and content sections",
+      "Verify the accessibility of the file upload component for users with disabilities",
   },
   {
     TestId: "TC15",
     TestCaseName:
-      "Verify that the accordion sections load correctly without any errors",
+      "Verify that the file upload component loads correctly without any errors",
+  },
+];
+
+export const fileDownloadTC = [
+  {
+    TestId: "TC01",
+    TestCaseName: "Verify that a file can be selected for download",
+  },
+  {
+    TestId: "TC02",
+    TestCaseName:
+      "Verify that the download button is enabled after selecting a file",
+  },
+  {
+    TestId: "TC03",
+    TestCaseName:
+      "Verify that the file download starts upon clicking the download button",
+  },
+  {
+    TestId: "TC04",
+    TestCaseName: "Verify the progress bar during file download",
+  },
+  {
+    TestId: "TC05",
+    TestCaseName:
+      "Verify that a success message is displayed after file download",
+  },
+  {
+    TestId: "TC06",
+    TestCaseName:
+      "Verify that the downloaded file is saved in the correct location",
+  },
+  {
+    TestId: "TC07",
+    TestCaseName:
+      "Verify that an error message is displayed for unsupported file types",
+  },
+  {
+    TestId: "TC08",
+    TestCaseName:
+      "Verify that an error message is displayed for files exceeding the size limit",
+  },
+  {
+    TestId: "TC09",
+    TestCaseName: "Verify that the file download can be canceled",
+  },
+  {
+    TestId: "TC10",
+    TestCaseName:
+      "Verify that the file download resumes after a network interruption",
+  },
+  {
+    TestId: "TC11",
+    TestCaseName: "Verify that multiple files can be downloaded simultaneously",
+  },
+  {
+    TestId: "TC12",
+    TestCaseName:
+      "Verify the responsiveness of the file download component on different screen sizes",
+  },
+  {
+    TestId: "TC13",
+    TestCaseName:
+      "Verify the accessibility of the file download component for users with disabilities",
+  },
+  {
+    TestId: "TC14",
+    TestCaseName:
+      "Verify that the file download component loads correctly without any errors",
   },
 ];

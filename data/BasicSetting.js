@@ -23,13 +23,17 @@ export const pagesTitle = {
   textBox: "Practice text box using selenium",
   buttonPage: "Practice automation on buttons",
   radioButtonPage: "Practice automation on Radio buttons",
+  uploadDownloadPage: "Practice automation on upload and download",
 };
 
 export const pagesDescription = {
-  textBoxPage: "",
-  buttonPage: "Practice automation on buttons",
+  textBoxPage:
+    "Test button interactions for automation testing. Simulate clicks, right-clicks, and double-clicks in real-time.",
+  buttonPage:
+    "Test button interactions for automation testing. Simulate clicks, right-clicks, and double-clicks in real-time.",
   radioButtonPage:
     "Test button interactions for automation testing. Simulate clicks, right-clicks, and double-clicks in real-time.",
+  uploadDownloadPage: "",
 };
 export const pageKeywords = {
   textBox: [
@@ -39,6 +43,13 @@ export const pageKeywords = {
     "UI testing",
     "interactive buttons",
   ],
+  buttonPage: [
+    "automation testing",
+    "button testing",
+    "UI testing",
+    "React testing",
+    "interactive buttons",
+  ],
   radioButtonPage: [
     "qa playground",
     "automation testing",
@@ -46,4 +57,5 @@ export const pageKeywords = {
     "UI testing",
     "interactive buttons",
   ],
+  uploadDownloadPage: "",
 };
