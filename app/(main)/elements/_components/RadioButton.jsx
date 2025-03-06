@@ -23,10 +23,6 @@ const RadioButtonPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="gradient-subTitle text-3xl">
-        {pagesTitle.radioButtonPage}n
-      </h2>
-
       {/* Main Section */}
       <section className="max-w-3xl border p-4 shadow-md rounded-md">
         <h3 className="text-lg font-semibold">How is Iron Man Movie?</h3>

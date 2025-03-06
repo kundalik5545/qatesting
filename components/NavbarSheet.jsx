@@ -16,72 +16,77 @@ import { basicDetails } from "@/data/BasicSetting";
 const SheetOpen = ({ children }) => {
   const [open, setOpen] = useState(false);
 
+  // Centralized navigation links data
+  const navigationLinks = [
+    { href: "/", label: "Home", altText: "Navigate to homepage" },
+    { href: "/", label: "Blog", altText: "Read our latest blog posts" },
+    {
+      href: "/about-us",
+      label: "About-Us",
+      altText: "About us page",
+    },
+    {
+      href: "/contact-us",
+      label: "Contact-Us",
+      altText: "Contac Us page",
+    },
+    {
+      href: "/elements/text-box",
+      label: "Elements",
+      altText: "Browse UI elements",
+    },
+    {
+      href: "/forms/basic-details",
+      label: "Forms",
+      altText: "Explore form components",
+    },
+    {
+      href: "/alert-window/browser-window",
+      label: "Alert & Window",
+      altText: "Alert and window examples",
+    },
+    {
+      href: "widget/basic-details",
+      label: "Widget",
+      altText: "Interactive widgets",
+    },
+    {
+      href: "/interactions/basic-details",
+      label: "Interactions",
+      altText: "User interaction examples",
+    },
+  ];
+
+  // Handle navigation click
+  const handleNavigationClick = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>{children}</SheetTrigger>
-        <SheetContent>
+        <SheetContent side="left">
           <SheetHeader>
             <SheetTitle>{basicDetails.websiteName}</SheetTitle>
             <SheetDescription>
-              <div className="flex flex-col space-y-2">
-                <Link href={"/"} className="">
-                  <Button
-                    variant="ghost"
-                    size="lg"
-                    className="text-base text-left"
+              <div className="flex flex-col items-start space-y-2">
+                {navigationLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-label={link.altText}
+                    onClick={handleNavigationClick}
                   >
-                    Home
-                  </Button>
-                </Link>
-                <Link href={"/blog"}>
-                  <Button
-                    variant="ghost"
-                    size="lg"
-                    className="text-base text-left"
-                  >
-                    Blog
-                  </Button>
-                </Link>
-                <Link href={"/about-us"}>
-                  <Button
-                    variant="ghost"
-                    size="lg"
-                    className="text-base text-left"
-                  >
-                    About-Us
-                  </Button>
-                </Link>
-                <Link href={"/elements"}>
-                  <Button variant="ghost" size="lg">
-                    Elements
-                  </Button>
-                </Link>
-                <Link href={"/forms"}>
-                  <Button variant="ghost" size="lg">
-                    Forms
-                  </Button>
-                </Link>
-                <Link href={"/alert-window"}>
-                  <Button variant="ghost" size="lg">
-                    Alert & Window
-                  </Button>
-                </Link>
-                <Link href={"/widget"}>
-                  <Button variant="ghost" size="lg">
-                    Widget
-                  </Button>
-                </Link>
-                <Link href={"/interactions"}>
-                  <Button variant="ghost" size="lg">
-                    Interactions
-                  </Button>
-                </Link>
-                <Link href={"/website"}>
-                  <Button variant="ghost" size="lg">
-                    Website
-                  </Button>
-                </Link>
+                    <Button
+                      variant="ghost"
+                      size="lg"
+                      className="text-base text-left"
+                    >
+                      {link.label}
+                    </Button>
+                  </Link>
+                ))}
               </div>
             </SheetDescription>
           </SheetHeader>

@@ -25,11 +25,6 @@ const UploadDownloadPage = () => {
   return (
     <div>
       <div className="Page-Container max-w-5xl mx-auto">
-        <h2 className="Page-Heading gradient-subTitle text-3xl">
-          {pagesTitle.uploadDownloadPage}
-        </h2>
-        <hr />
-
         {/* Main Section */}
         <section className="file-Content flex flex-col space-y-3">
           <div className="Download-File mb-3 mt-3">

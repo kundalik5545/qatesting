@@ -46,7 +46,6 @@ const BasicDetailsPage = () => {
   return (
     <div>
       <div className="max-w-5xl mx-auto">
-        <h2 className="gradient-subTitle text-3xl">Basic Details Form</h2>
         {/* Main Section */}
         <section className="max-w-5xl border p-4 shadow-md rounded-md my-3">
           <form onSubmit={handleFormSubmit}>
@@ -244,26 +243,6 @@ const BasicDetailsPage = () => {
           </form>
         </section>
         <hr />
-
-        {/* Test Cases Section */}
-        <section className="max-w-3xl border p-4 shadow-md rounded-md my-4">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[100px]">Test case Id</TableHead>
-                <TableHead>Test Case Name</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {basicDetailsTC.map((ele, index) => (
-                <TableRow key={index}>
-                  <TableCell className="font-medium">{ele.TestId}</TableCell>
-                  <TableCell>{ele.TestCaseName}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </section>
       </div>
     </div>
   );

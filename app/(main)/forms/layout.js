@@ -10,8 +10,6 @@ const Elementslayout = ({ children }) => {
 
   const navLinks = [
     { href: "/forms/basic-details", label: "Basic Details Form" },
-    { href: "/forms/job-application", label: "Job Application Form" },
-    { href: "/forms/to-do", label: "TO DO List form" },
   ];
 
   return (

@@ -26,8 +26,7 @@ const ButtonPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="gradient-subTitle text-3xl">Alerts</h2>
-      <section className="my-3">
+      <section className="my-3 space-y-2">
         {allAlertsBtn.map((al, i) => (
           <Button
             key={i}
@@ -35,12 +34,13 @@ const ButtonPage = () => {
             onClick={al.handleOnClick}
             type="button"
             variant="outline"
-            className="flex flex-row items-center justify-center text-center p-4"
+            className="flex flex-row items-center justify-center text-center p-4 space-y-2"
           >
             {al.btnText}
           </Button>
         ))}
       </section>
+      <hr />
     </div>
   );
 };

@@ -182,8 +182,6 @@ const LinksPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="gradient-subTitle text-3xl">Links</h2>
-
       {/* Main Section */}
       <section className="max-w-3xl border p-4 shadow-md rounded-md flex flex-col">
         <h3 className="text-xl py-3">01 Internal Following Links</h3>
