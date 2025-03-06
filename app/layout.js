@@ -11,52 +11,41 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: `${basicDetails.websiteName} - Automation Testing Playground`,
-    template: `${basicDetails.websiteName}- %s `,
+    default: `${basicDetails.websiteName}: Practice Automation Testing with Selenium`,
+    template: `${basicDetails.websiteName}: %s`,
   },
-  description: `${basicDetails.websiteDescription}`,
+  description: basicDetails.websiteDescription,
   keywords: [
-    "qa playground",
-    "Practice automation testing",
-    "website to practice automtion testing",
-    "QA Testing Practice",
-    "Automation Testing",
-    "Selenium",
-    "demoqa",
-    "automation testing practice websites",
-    "automation testing practice websites free",
-    "dummy sites for testing",
-    "best automation testing practice websites",
-    "selenium automation practice websites",
-    "dummy sites for manual testing",
-    "manual testing practice websites free",
-    "test automation practice blogspot",
-    "automation demo site for selenium",
+    "QA Playground",
+    "automation testing",
+    "Selenium testing",
+    "Selenium WebDriver",
+    "test automation",
+    "Selenium tutorials",
+    "QA automation",
   ],
   robots: "index, follow",
   openGraph: {
-    title: `${basicDetails.websiteName} - Automation Testing Playground`,
-    description:
-      "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
-    url: `${basicDetails.websiteURL}`,
+    type: "website",
+    site_name: basicDetails.websiteName,
+    title: `${basicDetails.websiteName}: Practice Automation Testing with Selenium`,
+    description: basicDetails.websiteDescription,
+    url: basicDetails.websiteURL,
     images: [
       {
         url: "/og-image.png",
-        width: 800,
-        height: 600,
-        alt: `${basicDetails.websiteName}- Automation Playground`,
+        width: 1200,
+        height: 630,
+        alt: `${basicDetails.websiteName} - Selenium Automation Testing Playground`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QA Testing Practice - Automation Testing Playground",
-    description:
-      "Practice automation testing with our interactive website. Enhance your QA skills with real-world testing scenarios and challenges.",
+    site: "@qaplayground",
+    title: `${basicDetails.websiteName}: Practice Automation Testing with Selenium`,
+    description: basicDetails.websiteDescription,
     images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: `${basicDetails.websiteURL}`,
   },
 };
 
@@ -64,10 +53,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Site Verification */}
         <meta
           name="google-site-verification"
           content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
         />
+
         {/* Google Ads */}
         <Script
           async
@@ -75,20 +66,19 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
+
         {/* Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-BXX24P81G3"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
+            function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
-            gtag('config', 'G-BXX24P81G3');
+            gtag('config', 'G-BXX24P81G3', { page_path: window.location.pathname });
           `}
         </Script>
       </head>
@@ -103,7 +93,10 @@ export default function RootLayout({ children }) {
           <Header />
 
           {/* Main Content */}
-          <main className="container mx-auto py-3 max-w-7xl min-h-screen">
+          <main
+            className="container mx-auto py-3 max-w-7xl min-h-screen"
+            role="main"
+          >
             {children}
           </main>
 

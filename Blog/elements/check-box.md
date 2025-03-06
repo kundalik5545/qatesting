@@ -1,8 +1,7 @@
 ---
-title: Handling text box using selenium
+title: How to Handle Checkboxes Using Selenium
 description: File upload automation is a crucial aspect of web testing using Selenium. Automating file uploads ensures that applications handle file selection and submission correctly.
 author: random coders
 date: 5 march 2025
-slug: file-upload-using-selenim
-postId: check-box
+keywords: "testing, selenium, c# with selenium"
 ---

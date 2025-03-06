@@ -22,6 +22,7 @@ import UploadDownloadPage from "../_components/UploadPage";
 import LinksPage from "../_components/LinksPage";
 import CheckBoxPage from "../_components/CheckBoxPage";
 import DynamicPropsPage from "../_components/DynamicPropertiesPage";
+import { basicDetails } from "@/data/BasicSetting";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
@@ -43,15 +44,20 @@ export async function generateMetadata({ params }) {
 
   return {
     title: data.title || "New Blog Post",
-    description: data.description?.slice(0, 150) || "Alternate description",
+    description: data.description?.slice(0, 160) || "Alternate description",
     keywords: data.keywords || "automation, selenium",
+    other: {
+      author: data.author || "Random Coders",
+    },
     openGraph: {
       title: data.title || "QA Playground - Practice automation",
       description: data.description?.slice(0, 200) || "Practice automation",
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/elements/${slug}`,
+      url: `${basicDetails.websiteURL}/elements/${slug}`,
       images: data.image ? [{ url: data.image }] : [],
     },
-    canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/elements/${slug}`,
+    alternates: {
+      canonical: `${basicDetails.websiteURL}/elements/${slug}`,
+    },
   };
 }
 

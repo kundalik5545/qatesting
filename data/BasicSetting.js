@@ -1,8 +1,7 @@
 export const basicDetails = {
   websiteName: "QA Playground",
   websiteDescription:
-    "QA Playground - 💡 Learn and practice Selenium, API testing, and more. Boost your skills with real-world challenges in our testing playground!",
-  tagLine: "🛠️ Practice, learn, and excel in automation testing!",
+    "QA Playground - 💡 is your go-to platform for real-world automation test cases and expert Selenium tutorials. Explore detailed blogs, practical test scenarios, and hands-on guides to enhance your automation testing skills. Stay ahead in Selenium automation with in-depth articles and best practices!",
   websiteEmail: "admin@qaplayground.com",
   websiteURL: "https://www.qaplayground.com",
 };
