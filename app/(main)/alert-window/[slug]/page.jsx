@@ -21,7 +21,7 @@ import AlertPage from "../_components/AlertPage";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "Blog/alerts");
+  const postsDirectory = path.join(process.cwd(), "Blog/Alerts");
   return fs.readdirSync(postsDirectory).map((filename) => ({
     slug: filename.replace(/\.md$/, ""),
   }));
