@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.qaplayground.com/
+
+# Sitemaps
+Sitemap: https://www.qaplayground.com/sitemap.xml

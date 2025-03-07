@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.qaplayground.com/robots.txt</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/sitemap.xml</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/about-us</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/privacy-policy</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/contact-us</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/button</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/check-box</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/dynamic-properties</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/links</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/radio-button</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/text-box</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/elements/upload-download</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/alert-window/alerts</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/alert-window/browser-window</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/alert-window/frames</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/alert-window/modal-dialogs</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/alert-window/nested-frames</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.qaplayground.com/forms/basic-details</loc><lastmod>2025-03-07T03:15:39.646Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
