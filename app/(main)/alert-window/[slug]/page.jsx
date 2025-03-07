@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
   const { data } = matter(fs.readFileSync(filePath, "utf-8"));
 
   return {
-    title: data.title || "New Blog Post",
+    title: `${data.title?.slice(0, 60) || "New Blog Post"}`,
     description: data.description?.slice(0, 160) || "Alternate description",
     keywords: data.keywords || "automation, selenium",
     other: {

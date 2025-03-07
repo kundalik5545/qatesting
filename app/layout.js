@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: {
     default: `${basicDetails.websiteName}: Practice Automation Testing with Selenium`,
-    template: `${basicDetails.websiteName}: %s`,
+    template: `%s`,
   },
   description: basicDetails.websiteDescription,
   keywords: [
