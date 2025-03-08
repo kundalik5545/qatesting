@@ -13,6 +13,7 @@ import { Button } from "./ui/button";
 import SheetOpen from "./NavbarSheet";
 import { ModeToggle } from "./lib/Mode-toggle";
 import { basicDetails } from "@/data/BasicSetting";
+import Image from "next/image";
 
 const Header = () => {
   const mainNavLinks = [
@@ -31,15 +32,23 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b shadow-sm">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        {/* <Link href="/" className="flex items-center gap-2">
           <Bot size={30} />
           <span className="text-2xl font-semibold">
             {basicDetails.websiteName}
           </span>
-        </Link>
+        </Link> */}
 
+        <Link href="/" passHref>
+          <Image
+            src="/logo/qaLogo2.png"
+            alt="QA PlayGround Logo"
+            width={250}
+            height={100}
+          />
+        </Link>
         {/* Mobile Menu */}
         <div className="block md:hidden">
           <ModeToggle />
