@@ -18,6 +18,7 @@ const Header = () => {
   const mainNavLinks = [
     { to: "/", text: "Home" },
     { to: "/blog", text: "Blog" },
+    { to: "/contact-us", text: "Contact" },
   ];
 
   const navLinks = [
@@ -40,6 +41,9 @@ const Header = () => {
         </Link>
 
         {/* Mobile Menu */}
+        <div className="block md:hidden">
+          <ModeToggle />
+        </div>
         <SheetOpen>
           <Menu className="lg:hidden cursor-pointer" size={28} />
         </SheetOpen>

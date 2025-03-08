@@ -85,6 +85,21 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-BXX24P81G3', { page_path: window.location.pathname });
           `}
         </Script>
+
+        {/* Buy Me Coffee */}
+        <script
+          type="text/javascript"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+          data-name="bmc-button"
+          data-slug="randomcoders"
+          data-color="#FFDD00"
+          data-emoji=""
+          data-font="Cookie"
+          data-text="Buy me a coffee"
+          data-outline-color="#000000"
+          data-font-color="#000000"
+          data-coffee-color="#ffffff"
+        ></script>
       </head>
       <body className={inter.className}>
         <ThemeProvider
@@ -97,10 +112,7 @@ export default function RootLayout({ children }) {
           <Header />
 
           {/* Main Content */}
-          <main
-            className="container mx-auto py-3 max-w-7xl min-h-screen"
-            role="main"
-          >
+          <main className="container mx-auto py-3  min-h-screen" role="main">
             {children}
           </main>
 
@@ -108,7 +120,7 @@ export default function RootLayout({ children }) {
           <Toaster richColors />
 
           {/* Footer */}
-          <footer>
+          <footer className="bg-[#F3F4F6] dark:bg-[#1F2227] p-1 pt-8">
             <Footer />
           </footer>
         </ThemeProvider>

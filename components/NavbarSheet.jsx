@@ -21,16 +21,6 @@ const SheetOpen = ({ children }) => {
     { href: "/", label: "Home", altText: "Navigate to homepage" },
     { href: "/blog", label: "Blog", altText: "Read our latest blog posts" },
     {
-      href: "/about-us",
-      label: "About-Us",
-      altText: "About us page",
-    },
-    {
-      href: "/contact-us",
-      label: "Contact-Us",
-      altText: "Contac Us page",
-    },
-    {
       href: "/elements/text-box",
       label: "Elements",
       altText: "Browse UI elements",
@@ -54,6 +44,21 @@ const SheetOpen = ({ children }) => {
       href: "/interactions/basic-details",
       label: "Interactions",
       altText: "User interaction examples",
+    },
+    {
+      href: "/about-us",
+      label: "About-Us",
+      altText: "About us page",
+    },
+    {
+      href: "/contact-us",
+      label: "Contact-Us",
+      altText: "Contac Us page",
+    },
+    {
+      href: "/privacy-policy",
+      label: "Privacy Policy",
+      altText: "Privacy Policy page",
     },
   ];
 

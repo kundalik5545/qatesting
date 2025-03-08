@@ -34,7 +34,7 @@ const SocialSharePage = () => {
     <div className="p-4 grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-4 dark:text-white max-w-xs">
       {socialMedia.map((media, index) => (
         <Link href={media.href} passHref key={index}>
-          <Button className="flex items-center justify-center space-x-2 px-2 py-2 dark:bg-blue-600 text-white transition-colors rounded shadow">
+          <Button className="flex items-center justify-center space-x-2 px-2 py-2 bg-gray-400 transition-colors rounded shadow">
             {media.icon}
           </Button>
         </Link>
