@@ -19,7 +19,7 @@ const SheetOpen = ({ children }) => {
   // Centralized navigation links data
   const navigationLinks = [
     { href: "/", label: "Home", altText: "Navigate to homepage" },
-    { href: "/", label: "Blog", altText: "Read our latest blog posts" },
+    { href: "/blog", label: "Blog", altText: "Read our latest blog posts" },
     {
       href: "/about-us",
       label: "About-Us",

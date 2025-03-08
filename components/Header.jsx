@@ -15,62 +15,74 @@ import { ModeToggle } from "./lib/Mode-toggle";
 import { basicDetails } from "@/data/BasicSetting";
 
 const Header = () => {
-  const allMainNavLinks = [
-    { to: "/", linkText: "Home" },
-    { to: `${basicDetails.websiteURL}`, linkText: "Blog" },
+  const mainNavLinks = [
+    { to: "/", text: "Home" },
+    { to: "/blog", text: "Blog" },
   ];
 
-  const allNavLinks = [
-    { to: "/elements/text-box", linkText: "Elemnets" },
-    { to: "/forms/basic-details", linkText: "Forms" },
-    { to: "/alert-window/browser-window", linkText: "Alert-window" },
-    { to: "/widget/basic-details", linkText: "Widget" },
-    { to: "/interactions/basic-details", linkText: "Interactions" },
+  const navLinks = [
+    { to: "/elements/text-box", text: "Elements" },
+    { to: "/forms/basic-details", text: "Forms" },
+    { to: "/alert-window/browser-window", text: "Alert Window" },
+    { to: "/widget/basic-details", text: "Widget" },
+    { to: "/interactions/basic-details", text: "Interactions" },
   ];
 
   return (
-    <div className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b">
+    <header className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b shadow-sm">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href={"/"} className="flex items-center justify-around gap-2">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
           <Bot size={30} />
           <span className="text-2xl font-semibold">
             {basicDetails.websiteName}
           </span>
         </Link>
-        <SheetOpen>
-          <Menu className="inline lg:hidden" />
-        </SheetOpen>
-        <div className=" hidden  lg:flex items-center justify-between space-x-2">
-          <div className="flex items-center justify-between space-x-2">
-            {allMainNavLinks.map((links, i) => (
-              <Link href={links.to} className="" key={i}>
-                <Button variant="default">{links.linkText}</Button>
-              </Link>
-            ))}
-          </div>
 
-          <div>
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button variant="default" size="lg">
-                  Practice <ChevronDown />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {allNavLinks.map((links, i) => (
-                  <Link href={links.to} key={i}>
-                    <DropdownMenuItem>{links.linkText}</DropdownMenuItem>
-                  </Link>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="">
-            <ModeToggle />
-          </div>
+        {/* Mobile Menu */}
+        <SheetOpen>
+          <Menu className="lg:hidden cursor-pointer" size={28} />
+        </SheetOpen>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-4">
+          {mainNavLinks.map(({ to, text }, index) => (
+            <Link key={index} href={to}>
+              <Button
+                variant="ghost"
+                className="hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                {text}
+              </Button>
+            </Link>
+          ))}
+
+          {/* Dropdown Menu */}
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button
+                variant="ghost"
+                className="hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                Practice <ChevronDown />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="dark:bg-gray-800">
+              {navLinks.map(({ to, text }, index) => (
+                <Link key={index} href={to}>
+                  <DropdownMenuItem className="hover:bg-gray-200 dark:hover:bg-gray-700">
+                    {text}
+                  </DropdownMenuItem>
+                </Link>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Dark Mode Toggle */}
+          <ModeToggle />
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 

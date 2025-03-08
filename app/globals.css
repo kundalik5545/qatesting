@@ -103,3 +103,25 @@ body {
 .hero-image.scrolled {
   transform: rotateX(0deg) scale(1) translateY(40px);
 }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.prose th {
+  background-color: #f4f4f5;
+  font-weight: bold;
+}
+
+.dark .prose th {
+  background-color: #333;
+}

@@ -3,7 +3,7 @@ export const basicDetails = {
   websiteDescription:
     "💡 Practice selenium automation testing with our demo site and elements. Learn more about selenium webdriver and its methods to automate UI testing.",
   tagLine: "💡 Learn, practice, and excel automation testing.",
-  websiteEmail: "admin@qaplayground.com",
+  websiteEmail: "randomcoders1@gmail.com",
   websiteURL: "https://www.qaplayground.com",
 };
 

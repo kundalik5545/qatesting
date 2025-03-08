@@ -19,7 +19,7 @@ const Footer = () => {
         {/* Column 2: Quick Links */}
         <nav aria-label="Footer Navigation" className="flex flex-col space-y-2">
           <h3 className="text-lg font-semibold">Quick Links</h3>
-          <Link href={allUrls.blogLink} className="hover:text-gray-200">
+          <Link href="/blog" className="hover:text-gray-200">
             Blog
           </Link>
           <Link href="/contact-us" className="hover:text-gray-200">

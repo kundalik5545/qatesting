@@ -2,7 +2,7 @@ import { basicDetails } from "@/data/BasicSetting";
 import React from "react";
 
 export const metadata = {
-  title: "About Us ",
+  title: "About - QA PlayGround",
   description:
     "QA Testing Playground is a hub for automation testers to practice and enhance their skills. Join our community to explore, contribute, and collaborate.",
   alternates: {
