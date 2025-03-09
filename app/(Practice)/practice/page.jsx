@@ -172,7 +172,7 @@ const PracticePage = () => {
             Practice Daily Automation!
           </h3>
         </section>
-        <section className="elements grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 pb-0 gap-8 pt-8">
+        <section className="elements grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 pb-0 gap-8 pt-8 p-5 ">
           {allElements?.map((el, i) => {
             return (
               <Card key={i}>
