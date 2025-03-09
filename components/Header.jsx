@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b shadow-sm">
-      <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <nav className="container mx-auto px-1 py-3 flex items-center justify-between">
         {/* Logo */}
         {/* <Link href="/" className="flex items-center gap-2">
           <Bot size={30} />
@@ -43,10 +43,11 @@ const Header = () => {
 
         <Link href="/" passHref>
           <Image
-            src="/logo/qaLogo2.png"
+            src="/logo/QALogo.webp"
             alt="QA PlayGround Logo"
             width={250}
             height={100}
+            title="QA PlayGround Logo"
           />
         </Link>
         {/* Mobile Menu */}

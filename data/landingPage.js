@@ -36,8 +36,8 @@ export const statsData = [
 export const featuresData = [
   {
     icon: <Unlink2 className="h-8 w-8 text-blue-600" />,
-    to: "/elements/text-box",
-    title: "Elements",
+    to: "/practice",
+    title: "Practice Web Elements",
     description:
       "Get detailed insights into your spending patterns with AI-powered analytics",
   },

@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section className="mt-24 mb-8 md:mb-16  px-4 bg-background text-foreground">
       <div className="container mx-auto text-center flex flex-col items-center">
-        <h1 className=" text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h1 className=" text-4xl md:text-6xl font-bold leading-tight mb-6">
           Master Automation Testing With
         </h1>
         <span className="gradient-subTitle text-4xl md:text-7xl font-bold leading-tight mb-6">
