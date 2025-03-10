@@ -20,14 +20,7 @@ const Header = () => {
     { to: "/", text: "Home" },
     { to: "/blog", text: "Blog" },
     { to: "/contact-us", text: "Contact" },
-  ];
-
-  const navLinks = [
-    { to: "/elements/text-box", text: "Elements" },
-    { to: "/forms/basic-details", text: "Forms" },
-    { to: "/alert-window/browser-window", text: "Alert Window" },
-    { to: "/widget/basic-details", text: "Widget" },
-    { to: "/interactions/basic-details", text: "Interactions" },
+    { to: "/practice", text: "Practice" },
   ];
 
   return (
@@ -62,27 +55,6 @@ const Header = () => {
               </Button>
             </Link>
           ))}
-
-          {/* Dropdown Menu */}
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Button
-                variant="ghost"
-                className="hover:bg-gray-200 dark:hover:bg-gray-700"
-              >
-                Practice <ChevronDown />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="dark:bg-gray-800">
-              {navLinks.map(({ to, text }, index) => (
-                <Link key={index} href={to}>
-                  <DropdownMenuItem className="hover:bg-gray-200 dark:hover:bg-gray-700">
-                    {text}
-                  </DropdownMenuItem>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
 
           {/* Dark Mode Toggle */}
           <ModeToggle />
