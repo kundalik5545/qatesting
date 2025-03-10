@@ -14,18 +14,18 @@ const sections = [
   {
     title: "Free Tutorials",
     description: "Free courses on software testing & development.",
-    buttons: [{ link: "/learn", buttonText: "Explore Free Courses" }],
+    buttons: [{ link: "/learn/courses", buttonText: "Explore Free Courses" }],
   },
   {
     title: "Practice Logic",
     description: "Solve real interview questions.",
     buttons: [
       {
-        link: "/practice/automation-test-cases",
+        link: "/learn/automation-test-cases",
         buttonText: "Practice Automation TC",
       },
       {
-        link: "/practice/logical-programs-list",
+        link: "/learn/logical-programs-list",
         buttonText: "Logical Programs",
       },
     ],

@@ -1,4 +1,9 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,154 +14,154 @@ const allElements = [
     logo: "/mainicons/edit.svg",
     Description: "Practice Page Object Model with fakestore",
     footerTitle: "Page Object Model",
-    link: "/elements/text-box",
+    link: "/practice/pom",
   },
   {
     title: "Input",
     logo: "/mainicons/edit.svg",
     Description: "Interact with different types of input fields",
     footerTitle: "Edit",
-    link: "/elements/text-box",
+    link: "/practice/input",
   },
   {
     title: "Button",
     logo: "/mainicons/buttons.svg",
     Description: "Interact with different types of buttons",
     footerTitle: "Click",
-    link: "/elements/button",
+    link: "/practice/button",
   },
   {
     title: "Select",
     logo: "/mainicons/select.svg",
     Description: "Interact with different types of drop-down",
     footerTitle: "Select By",
-    link: "/elements/text-box",
+    link: "/practice/select",
   },
   {
     title: "Links",
     logo: "/mainicons/edit.svg",
     Description: "Interact with different types of links",
     footerTitle: "On Click",
-    link: "/elements/links",
+    link: "/practice/links",
   },
   {
     title: "Alert",
     logo: "/mainicons/alert.svg",
     Description: "Interact with different types of dialog boxes",
     footerTitle: "Dialog",
-    link: "/alert-window/alerts",
+    link: "/practice/alert",
   },
   {
     title: "Frame",
     logo: "/mainicons/frame.svg",
     Description: "Interact with different types of frames/iframes",
     footerTitle: "Inner HTML",
-    link: "/elements/text-box",
+    link: "/practice/frame",
   },
   {
     title: "Radio",
     logo: "/mainicons/radio.svg",
     Description: "Interact with different types of radio & check boxes",
     footerTitle: "Toggle",
-    link: "/elements/radio-button",
+    link: "/practice/radio",
   },
   {
     title: "Window",
     logo: "/mainicons/window.svg",
     Description: "Switch different types of tabs or windows",
     footerTitle: "Tabs",
-    link: "/elements/text-box",
+    link: "/practice/window",
   },
   {
     title: "Elements",
     logo: "/mainicons/elements.svg",
     Description: "Play with element and smash them",
     footerTitle: "Find Elements",
-    link: "/elements/text-box",
+    link: "/practice/elements",
   },
   {
     title: "Drag",
     logo: "/mainicons/drag.svg",
     Description: "Can you Drag me here and there",
     footerTitle: "Just Drag",
-    link: "/elements/text-box",
+    link: "/practice/drag",
   },
   {
     title: "Drop",
     logo: "/mainicons/falling.svg",
     Description: "Feel free to bounce me",
     footerTitle: "Drop Me",
-    link: "/elements/text-box",
+    link: "/practice/drop",
   },
   {
     title: "Sort",
     logo: "/mainicons/filter.svg",
     Description: "Sort out the problem quickly",
     footerTitle: "Sort out",
-    link: "/elements/text-box",
+    link: "/practice/sort",
   },
   {
     title: "Multi-Select",
     logo: "/mainicons/alert.svg",
     Description: "Be a multi-tasker",
     footerTitle: "Page",
-    link: "/elements/text-box",
+    link: "/practice/multi-select",
   },
   {
     title: "Slider",
     logo: "/mainicons/slider.svg",
     Description: "Hmm.. Can you slide me?",
     footerTitle: "Page",
-    link: "/elements/text-box",
+    link: "/practice/slider",
   },
   {
     title: "Waits",
     logo: "/mainicons/waits.svg",
     Description: "It's ok to wait but you know..",
     footerTitle: "Timeout",
-    link: "/elements/text-box",
+    link: "/practice/waits",
   },
   {
     title: "Table",
     logo: "/mainicons/simtable.svg",
     Description: "It's all about rows & columns",
     footerTitle: "Simple Table",
-    link: "/elements/text-box",
+    link: "/practice/smiple-table",
   },
   {
     title: "Table",
     logo: "/mainicons/simtable.svg",
     Description: "It's little complicated but give a try",
     footerTitle: "Advance Table",
-    link: "/elements/text-box",
+    link: "/practice/advance-table",
   },
   {
     title: "Calendar",
     logo: "/mainicons/calendar.svg",
     Description: "My time is precious & your?",
     footerTitle: "Date & Time",
-    link: "/elements/text-box",
+    link: "/practice/calendar",
   },
   {
     title: "Forms",
     logo: "/mainicons/sign-form.svg",
     Description: "Interact with everything",
     footerTitle: "Submit Me",
-    link: "/elements/text-box",
+    link: "/practice/forms",
   },
   {
     title: "File",
     logo: "/mainicons/download.svg",
     Description: "All your data is secured!",
     footerTitle: "Upload & Download",
-    link: "/elements/upload-download",
+    link: "/practice/upload-download",
   },
   {
     title: "Shadow",
     logo: "/mainicons/mario.svg",
     Description: "Shadow never leaves us alone",
     footerTitle: "DOM",
-    link: "/elements/text-box",
+    link: "/practice/shadow-dom",
   },
 ];
 
@@ -172,26 +177,29 @@ const PracticePage = () => {
             Practice Daily Automation!
           </h3>
         </section>
-        <section className="elements grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 pb-0 gap-8 pt-8 p-5 ">
+        <section className="elements grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-0 gap-8 pt-8 p-5 ">
           {allElements?.map((el, i) => {
             return (
-              <Card key={i}>
-                <CardHeader className="flex flex-row items-center justify-between p-4 shadow-lg dark:shadow-md dark:shadow-gray-800 ">
-                  <p className="text-xl font-semibold">{el.title}</p>
-                  <Image src={el.logo} width={50} height={50} />
+              <Card
+                key={i}
+                className="h-56 transition-transform duration-300 ease-in-out transform hover:scale-105"
+              >
+                <CardHeader className="flex flex-row items-center justify-between p-1 shadow-lg dark:shadow-md dark:shadow-gray-800  space-y-0">
+                  <p className="px-2 text-xl font-semibold">{el.title}</p>
+                  <Image src={el.logo} width={50} height={50} className="p-1" />
                 </CardHeader>
-                <CardContent className="pb-3">
-                  <p className="py-7 text-base dark:text-gray-200 text-center border-b">
+                <CardContent className="p-3 h-28">
+                  <p className="py-7 text-base dark:text-gray-200 text-center">
                     {el.Description}
                   </p>
-                  <p className="flex items-center justify-center text-center py-2 ">
-                    <Link href={el.link}>
-                      <span className="underline text-blue-600 dark:text-teal-200 font-light">
-                        {el.footerTitle}
-                      </span>
-                    </Link>
-                  </p>
                 </CardContent>
+                <CardFooter className="flex flex-col items-center justify-center p-2 border-t ">
+                  <Link href={el.link}>
+                    <span className="underline text-blue-600 dark:text-teal-200 font-light">
+                      {el.footerTitle}
+                    </span>
+                  </Link>
+                </CardFooter>
               </Card>
             );
           })}

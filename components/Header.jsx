@@ -32,15 +32,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b shadow-sm">
-      <nav className="container mx-auto px-1 py-3 flex items-center justify-between">
-        {/* Logo */}
-        {/* <Link href="/" className="flex items-center gap-2">
-          <Bot size={30} />
-          <span className="text-2xl font-semibold">
-            {basicDetails.websiteName}
-          </span>
-        </Link> */}
-
+      <nav className="container mx-auto px-1  flex items-center justify-between">
         <Link href="/" passHref>
           <Image
             src="/logo/QALogo.webp"
