@@ -20,8 +20,7 @@ const AlertPage = () => {
         <div className="w-full sm:w-2/3 pb-5 md:pb-0">
           <Card className="w-full shadow-lg rounded-xl dark:bg-gray-800">
             <CardContent className="space-y-4 pt-4 sm:pt-3 text-sm sm:text-base text-gray-900 dark:text-gray-200">
-              <p className="text-lg font-medium">Simple Alert</p>
-              <Button>Simple Alert</Button>
+              <QAPlayGround />
             </CardContent>
           </Card>
         </div>
@@ -40,14 +39,7 @@ const AlertPage = () => {
                 On completion of this exercise, you can learn the following
                 concepts:
               </p>
-              <ol className="font-light list-decimal pl-6 text-left space-y-1">
-                <li>accept()</li>
-                <li>dismiss()</li>
-                <li>waits()</li>
-                <li>switchTo()</li>
-                <li>sendKeys()</li>
-                <li>getText()</li>
-              </ol>
+              <LearningInsight />
             </CardContent>
             <CardFooter className="flex justify-center border-t border-gray-200 dark:border-gray-700 p-4">
               <Link
@@ -68,3 +60,27 @@ const AlertPage = () => {
 };
 
 export default AlertPage;
+
+const QAPlayGround = () => {
+  return (
+    <>
+      <p className="text-lg font-medium">Simple Alert</p>
+      <Button>Simple Alert</Button>
+    </>
+  );
+};
+
+const LearningInsight = () => {
+  return (
+    <>
+      <ol className="font-light list-decimal pl-6 text-left space-y-1">
+        <li>accept()</li>
+        <li>dismiss()</li>
+        <li>waits()</li>
+        <li>switchTo()</li>
+        <li>sendKeys()</li>
+        <li>getText()</li>
+      </ol>
+    </>
+  );
+};
