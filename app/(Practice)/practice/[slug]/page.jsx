@@ -14,7 +14,12 @@ import { transformerCopyButton } from "@rehype-pretty/transformers";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { basicDetails } from "@/data/BasicSetting";
 
 // All pages
@@ -24,6 +29,7 @@ import ButtonPage from "../_components/ButtonPage";
 import ElementsPage from "../_components/ElementsPage";
 import LinksPage from "../_components/LinksPage";
 import AlertPage from "../_components/AlertPage";
+import { Calendar, Clock, GraduationCap } from "lucide-react";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
@@ -107,42 +113,58 @@ const PracticePage = async ({ params }) => {
     const DynamicComponent = componentMapping[slug] || null;
 
     return (
-      <div className="container mx-auto max-w-5xl text-foreground bg-background">
-        <section className="Practice-section pb-20">
-          {DynamicComponent && <DynamicComponent />}
-        </section>
+      <div className="container mx-auto max-w-5xl text-foreground bg-background p-2">
+        <div className="page-tile">
+          <h1 className="text-2xl sm:text-3xl  font-semibold text-gray-900 dark:text-white text-start transition-all duration-300 ease-in-out">
+            {data.title}
+          </h1>
 
-        <article className="pt-5">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{data.title}</h2>
-          <div className="flex sm:flex-row gap-2 sm:gap-4 text-gray-500 mb-2">
-            <Badge className="p-1">By {data.author || "Admin"}</Badge>
-            <p className="text-sm">
+          <div className="flex sm:flex-row items-center gap-2 sm:gap-4 text-gray-500 mb-2 py-1 transition-all duration-300 ease-in-out">
+            <span className="text-sm">By {data.author || "Admin"}</span>
+            <p className="text-sm flex items-center gap-1">
+              <Calendar size={20} />{" "}
               {new Date(data.date)
                 .toLocaleDateString("en-GB", {
                   day: "2-digit",
-                  month: "short",
+                  month: "long",
                   year: "numeric",
                 })
                 .replace(/ /g, " ")}
             </p>
           </div>
+        </div>
+        <hr />
+
+        {/* Main Testing PlayGround */}
+        <section className="Practice-section pb-20">
+          {DynamicComponent && <DynamicComponent />}
+        </section>
+
+        <hr className="pb-2" />
+
+        <article className="alert-article">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white text-start transition-all duration-300 ease-in-out pb-5">
+            {data.title}
+          </h2>
 
           {data.image && (
-            <div className="mb-4">
+            <div className="sm:w-[600px] sm:h-[300px] grid grid-cols-1 justify-center items-center ">
               <Image
                 src={data.image}
                 alt={data.title}
-                width={800}
-                height={450}
+                width={600}
+                height={250}
                 className="w-full h-auto object-cover rounded-lg"
                 priority
               />
             </div>
           )}
 
+          <br className="hidden sm:block" />
+          <br className="hidden sm:block" />
           <div
             dangerouslySetInnerHTML={{ __html: htmlContent }}
-            className="prose dark:prose-invert w-full"
+            className="prose dark:prose-invert w-full transition-all duration-300 ease-in-out pt-3"
           />
         </article>
       </div>
