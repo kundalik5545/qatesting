@@ -6,6 +6,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import SheetOpen from "./NavbarSheet";
 import { ModeToggle } from "./lib/Mode-toggle";
+import Image from "next/image";
 
 const Header = () => {
   const mainNavLinks = [
@@ -19,10 +20,11 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-white/80 dark:bg-black backdrop-blur-md z-50 border-b shadow-sm py-2">
       <nav className="container mx-auto px-1  flex items-center justify-between">
         <Link href="/" passHref>
-          <span className="text-2xl flex items-center gap-2">
-            QA Play
-            <CirclePlay />
-            Ground
+          <span className="text-2xl flex items-center justify-center gap-2">
+            <Image src="/mainicons/edit.svg" width={30} height={30} />
+            <span className="gradient-subTitle font-semibold">
+              QA PlayGround
+            </span>
           </span>
         </Link>
         {/* Mobile Menu */}

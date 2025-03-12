@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import fs from "fs";
-import path from "path";
 import React from "react";
 import LogicalPrograms from "../_components/LogicalPrograms";
 import AutomationTestCasesPage from "../_components/AutomationTestCases";
 import CoursesPage from "../_components/CoursesPage";
 import { notFound } from "next/navigation";
 import { basicDetails } from "@/data/BasicSetting";
-import { title } from "process";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
