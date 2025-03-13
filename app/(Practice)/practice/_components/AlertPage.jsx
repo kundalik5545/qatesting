@@ -93,9 +93,10 @@ const QAPlayGround = () => {
   const [promptText, setPromptText] = useState("");
   return (
     <>
-      <div>
+      <div className="flex items-center justify-between">
         <p className="text-sm sm:text-base font-medium">
-          Simple Alert - just click on simple alert and verify the alert text
+          <span className="font-semibold text-blue-500">Simple Alert</span> -
+          <p>just click on simple alert and verify the alert text</p>
         </p>
 
         <Button
@@ -106,10 +107,10 @@ const QAPlayGround = () => {
           Simple Alert
         </Button>
       </div>
-      <div>
+      <div className="flex items-center justify-between">
         <p className="text-sm sm:text-base font-medium">
-          Confirm Alert - verify confirm (ok) and dismiss (cancel) and get Text
-          of alert message.
+          <span className="font-semibold text-blue-500">Confirm Alert</span> -
+          <p>Confirm (ok) or dismiss (cancel) the alert and get Text.</p>
         </p>
         <Button
           onClick={() => {
@@ -121,9 +122,10 @@ const QAPlayGround = () => {
           Confirm Alert
         </Button>
       </div>
-      <div>
+      <div className="flex items-center justify-between">
         <p className="text-sm sm:text-base font-medium">
-          Prompt Alert - Type your name and accept it.
+          <span className="font-semibold text-blue-500">Prompt Alert</span> -
+          <p>Enter your name and accept it.</p>
         </p>
         <Button
           onClick={() => {
@@ -141,9 +143,10 @@ const QAPlayGround = () => {
           </p>
         )}
       </div>
-      <div>
+      <div className="flex items-center justify-between">
         <p className="text-sm sm:text-base font-medium">
-          Toast Alert - Print the toast text.
+          <span className="font-semibold text-blue-500">Toast Alert</span> -
+          <p> Print the toast text.</p>
         </p>
         <Button
           onClick={() => {
@@ -160,9 +163,10 @@ const QAPlayGround = () => {
           </p>
         )}
       </div>
-      <div>
+      <div className="flex items-center justify-between">
         <p className="text-sm sm:text-base font-medium">
-          Sweet Alert - Print the toast text.
+          <span className="font-semibold text-blue-500">Sweet Alert</span> -
+          <p> This is modern alert.</p>
         </p>
         <Button className="mt-2 mb-2" id="toast-alert">
           <ModalAlert>Sweet Alert</ModalAlert>
