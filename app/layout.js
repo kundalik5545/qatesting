@@ -82,6 +82,13 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-Z4H9RTYGS4');
           `}
         </Script>
+
+        <script
+          id="usercentrics-cmp"
+          src="https://app.usercentrics.eu/browser-ui/latest/loader.js"
+          data-settings-id="RCGf52YH07pmK7"
+          async
+        ></script>
       </head>
 
       <body className={inter.className}>
