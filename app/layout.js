@@ -53,39 +53,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Site Verification */}
-        <meta
-          name="google-site-verification"
-          content="oXKfb8bmh7yK4KhJexxVVMCeZgN8g1gTDHUIWbbR7SU"
-        />
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-9803190596877704"
-        ></meta>
-
-        {/* Google Ads */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9803190596877704"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
-
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-BXX24P81G3"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-BXX24P81G3', { page_path: window.location.pathname });
-          `}
-        </Script>
-
         {/* Buy Me Coffee */}
         <script
           type="text/javascript"
@@ -100,7 +67,23 @@ export default function RootLayout({ children }) {
           data-font-color="#000000"
           data-coffee-color="#ffffff"
         ></script>
+
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z4H9RTYGS4"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-Z4H9RTYGS4');
+          `}
+        </Script>
       </head>
+
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
