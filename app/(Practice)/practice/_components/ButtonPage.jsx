@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -11,6 +13,7 @@ import { Button } from "@/components/ui/button";
 
 const ButtonPage = () => {
   const youtubeLink = "";
+
   return (
     <div className="pt-2">
       {/* Main layout */}
@@ -63,43 +66,111 @@ export default ButtonPage;
 const QAPlayGround = () => {
   return (
     <>
+      <div className="button-section">
+        <p className="label">
+          Goto Home and come back here using driver commanda
+        </p>
+        <Link href="/">
+          <Button className="mt-2" variant="destructive" id="button-color">
+            Go To Home
+          </Button>
+        </Link>
+      </div>
+
       <div>
-        <p>Goto Home and come back here using driver commanda</p>
-        <Button variant="destructive" id="home-button">
-          Go To Home
+        <p className="label">Get the X & Y co-ordinates of button</p>
+        <button
+          className="py-2 bg-teal-300 mt-2 px-2 rounded-lg text-gray-800"
+          variant="outline"
+          id="button-xyCordinate"
+        >
+          Find Location
+        </button>
+      </div>
+
+      <div>
+        <p className="label">Find the color of the button</p>
+        <button
+          className="py-2 bg-blue-300 mt-2 px-2 rounded-lg text-gray-800"
+          id="button-color"
+        >
+          Find my color?
+        </button>
+      </div>
+
+      <div>
+        <p className="label">Find the height & width of the button</p>
+        <Button className="mt-2" id="button-heightWidth">
+          Do you know my size?
         </Button>
       </div>
+
       <div>
-        <p>Get the X & Y co-ordinates</p>
-        <Button variant="outline">Find Location</Button>
-      </div>
-      <div>
-        <p>Find the color of the button</p>
-        <Button>Find my color?</Button>
-      </div>
-      <div>
-        <p>Find the height & width of the button</p>
-        <Button>Do you know my size?</Button>
-      </div>
-      <div>
-        <p>Confirm button is disabled</p>
+        <p className="label">Confirm button is disabled</p>
         <Button
           variant="destructive"
           disabled
-          className="cursor-not-allowed pointer-events-none"
+          className="cursor-not-allowed pointer-events-none mt-2"
           aria-disabled="true"
           aria-label="Action Disabled"
+          id="button-disabled"
         >
           Disabled
         </Button>
       </div>
+
       <div>
-        <p>Click and Hold Button</p>
-        <Link href="/" passHref>
-          <Button> Click and Hold!</Button>
-        </Link>
+        <p className="label">
+          Click and Hold Button for 1.5 sec and verify button text
+        </p>
+        <ClickHoldButton />
       </div>
     </>
+  );
+};
+
+const ClickHoldButton = () => {
+  const [isHolding, setIsHolding] = useState(false);
+  const [holdComplete, setHoldComplete] = useState(false);
+  const timerRef = useRef(null);
+
+  const handleMouseDown = () => {
+    setIsHolding(true);
+    timerRef.current = setTimeout(() => {
+      setHoldComplete(true);
+    }, 1500);
+  };
+
+  const handleMouseUp = () => {
+    setIsHolding(false);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (!holdComplete) {
+      setHoldComplete(false);
+    }
+  };
+
+  const buttonClass = holdComplete
+    ? "bg-green-500 hover:bg-green-600 text-white mt-2"
+    : isHolding
+    ? "bg-yellow-400 hover:bg-yellow-500 text-gray-800 mt-2"
+    : "bg-blue-500 hover:bg-blue-600 text-white mt-2";
+
+  const buttonText = holdComplete
+    ? "Hold Complete!"
+    : isHolding
+    ? "Keep Holding..."
+    : "Click and Hold!";
+
+  return (
+    <Button
+      id="button-clickHold"
+      className={buttonClass}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    >
+      {buttonText}
+    </Button>
   );
 };
 

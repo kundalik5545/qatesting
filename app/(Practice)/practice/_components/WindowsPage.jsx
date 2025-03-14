@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   CardContent,
@@ -11,7 +9,7 @@ import { GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const SelectPage = () => {
+const WindowsPage = () => {
   const youtubeLink = "";
 
   return (
@@ -61,15 +59,44 @@ const SelectPage = () => {
   );
 };
 
-export default SelectPage;
+export default WindowsPage;
 
 const QAPlayGround = () => {
   return (
     <>
-      <p className="text-sm sm:text-base font-medium">
-        <span className="font-semibold text-blue-500">Simple Alert</span> -
-        <p>just click on simple alert and verify the alert text</p>
-      </p>
+      <div className="space-y-4">
+        {/* Go to Home */}
+        <div>
+          <p className="font-semibold">Goto Home</p>
+          <Link href="/" passHref target={"_blank"}>
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md mt-2">
+              Open Home Page
+            </Button>
+          </Link>
+        </div>
+
+        {/* Open multiple windows */}
+        <div>
+          <p className="font-semibold mt-4">Open multiple windows</p>
+          <Link href="/practice/select" passHref target={"_blank"}>
+            <Button variant="outline" className="mt-2">
+              Multiple windows
+            </Button>
+          </Link>
+        </div>
+
+        {/* Steps List */}
+        <ol className="list-decimal list-inside mt-4 space-y-1 text-sm">
+          <li>Click on the home button</li>
+          <li>Goto the newly opened tab</li>
+          <li>Print the title of the page</li>
+          <li>Close the parent window</li>
+          <li>Close the child window</li>
+          <li>Click on the Multiple windows button</li>
+          <li>Print all the window titles</li>
+          <li>Close all the windows</li>
+        </ol>
+      </div>
     </>
   );
 };
@@ -78,12 +105,12 @@ const LearningInsight = () => {
   return (
     <>
       <ol className="font-light list-decimal pl-6 text-left space-y-1">
-        <li>accept()</li>
-        <li>dismiss()</li>
-        <li>waits()</li>
-        <li>sendKeys()</li>
-        <li>switchTo()</li>
-        <li>getText()</li>
+        <li>Window Handling concept</li>
+        <li>close()</li>
+        <li>qauit()</li>
+        <li>getTitle()</li>
+        <li>Set - LinkedHashSet</li>
+        <li>Iterator or loop</li>
       </ol>
     </>
   );

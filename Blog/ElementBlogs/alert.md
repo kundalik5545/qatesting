@@ -21,4 +21,4 @@ To handle them we are having different methods in selenium such as -
 5. wait.
 6. switchTo
 
-> 📄 **Also Read:** [Top 10 Best Automation Practice Website](http://localhost:3000/blog/top-10-best-automation-practice-website)
+> 📄 **Also Read:** [Top 10 Best Automation Practice Website](https://www.qaplayground.com/blog/top-10-best-automation-practice-website)

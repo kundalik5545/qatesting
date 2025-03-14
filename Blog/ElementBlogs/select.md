@@ -19,7 +19,7 @@ To handle them we are having different methods in selenium such as -
 4. getText,
 5. wait.
 
-> 📄 **Also Read:** [Selenium Commands every Developer or Tester must know](#)
+> 📄 **Also Read:** [Selenium Commands every Developer or Tester must know](https://www.qaplayground.com/)
 
 <!-- <div style="
     background-color: #f0fdf4;

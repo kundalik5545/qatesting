@@ -13,23 +13,19 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import { basicDetails } from "@/data/BasicSetting";
 
 // All pages
-import InputPage from "../_components/InputPage";
-import SelectPage from "../_components/SelectPage";
-import ButtonPage from "../_components/ButtonPage";
 import ElementsPage from "../_components/ElementsPage";
+import InputPage from "../_components/InputPage";
+import ButtonPage from "../_components/ButtonPage";
+import SelectPage from "../_components/SelectPage";
 import LinksPage from "../_components/LinksPage";
 import AlertPage from "../_components/AlertPage";
-import { Calendar, Clock, GraduationCap } from "lucide-react";
+
+import { Calendar } from "lucide-react";
+import RadioButtonPage from "../_components/RadioButton";
+import WindowsPage from "../_components/WindowsPage";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
@@ -108,6 +104,8 @@ const PracticePage = async ({ params }) => {
       select: SelectPage,
       links: LinksPage,
       alert: AlertPage,
+      radio: RadioButtonPage,
+      window: WindowsPage,
     };
 
     const DynamicComponent = componentMapping[slug] || null;
