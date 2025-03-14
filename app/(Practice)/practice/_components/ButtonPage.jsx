@@ -7,49 +7,46 @@ import {
 } from "@/components/ui/card";
 import { GraduationCap } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const ButtonPage = () => {
   const youtubeLink = "";
   return (
-    <div className="">
-      <h2 className="text-4xl font-semibold pl-5 md:pl-0 py-4 ">Button</h2>
-      <div className="flex md:flex-row flex-col items-center md:items-start gap-5">
-        {/* Main content */}
-        <div className="main-section  ">
-          <div className="flex justify-center items-center ">
-            <Card className="w-[350px] sm:w-[500px] shadow-lg rounded-lg ">
-              <CardContent className="space-y-4 pt-4 sm:pt-3 text-sm sm:text-base"></CardContent>
-            </Card>
-          </div>
+    <div className="pt-2">
+      {/* Main layout */}
+      <div className="flex flex-col sm:flex-row w-full gap-4">
+        {/* Main Card Section */}
+        <div className="w-full sm:w-2/3 pb-5 md:pb-0">
+          <Card className="w-full shadow-lg rounded-xl dark:bg-gray-800">
+            <CardContent className="space-y-4 pt-4 sm:pt-3 text-sm sm:text-base text-gray-900 dark:text-gray-200">
+              <QAPlayGround />
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Insigth Card */}
-        <div className="insights-section p-2">
-          <Card className="w-80 transition-transform duration-300 ease-in-out transform ">
-            <CardHeader className="flex flex-row items-center justify-between p-2 shadow-lg dark:shadow-md dark:shadow-gray-800  space-y-0">
-              <p className="px-2 text-xl font-semibold">Insight</p>
-              <GraduationCap />
-            </CardHeader>
-            <CardContent className="p-4 ">
-              <p className="font-light py-3 text-base dark:text-gray-200 text-center">
-                On completion of this exercise, you can learn the following
-                concepts.
+        {/* Insight Card */}
+        <div className="w-full sm:w-1/3">
+          <Card className="w-full shadow-lg rounded-xl dark:bg-gray-800">
+            <CardHeader className="flex flex-row items-center justify-between p-4 shadow-md dark:shadow-gray-800">
+              <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                Insight
               </p>
-              <ol className="font-light list-decimal pl-8">
-                <li>sendKeys()</li>
-                <li>Keyboard TAB</li>
-                <li>getAttribute()</li>
-                <li>clear()</li>
-                <li>isEnabled()</li>
-              </ol>
+              <GraduationCap className="text-gray-700 dark:text-teal-300" />
+            </CardHeader>
+            <CardContent className="p-4 text-center text-gray-800 dark:text-gray-300">
+              <p className="font-light py-3 text-base">
+                On completion of this exercise, you can learn the following
+                concepts:
+              </p>
+              <LearningInsight />
             </CardContent>
-            <CardFooter className="flex flex-col items-center justify-center hover:bg-teal-50 p-2 py-4 border-t ">
+            <CardFooter className="flex justify-center border-t border-gray-200 dark:border-gray-700 p-4">
               <Link
                 href={youtubeLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="underline text-blue-600 dark:text-teal-200 font-light ">
+                <span className="underline text-blue-600 dark:text-teal-200 font-light hover:text-blue-800 dark:hover:text-teal-300">
                   Watch tutorial
                 </span>
               </Link>
@@ -62,3 +59,62 @@ const ButtonPage = () => {
 };
 
 export default ButtonPage;
+
+const QAPlayGround = () => {
+  return (
+    <>
+      <div>
+        <p>Goto Home and come back here using driver commanda</p>
+        <Button variant="destructive" id="home-button">
+          Go To Home
+        </Button>
+      </div>
+      <div>
+        <p>Get the X & Y co-ordinates</p>
+        <Button variant="outline">Find Location</Button>
+      </div>
+      <div>
+        <p>Find the color of the button</p>
+        <Button>Find my color?</Button>
+      </div>
+      <div>
+        <p>Find the height & width of the button</p>
+        <Button>Do you know my size?</Button>
+      </div>
+      <div>
+        <p>Confirm button is disabled</p>
+        <Button
+          variant="destructive"
+          disabled
+          className="cursor-not-allowed pointer-events-none"
+          aria-disabled="true"
+          aria-label="Action Disabled"
+        >
+          Disabled
+        </Button>
+      </div>
+      <div>
+        <p>Click and Hold Button</p>
+        <Link href="/" passHref>
+          <Button> Click and Hold!</Button>
+        </Link>
+      </div>
+    </>
+  );
+};
+
+const LearningInsight = () => {
+  return (
+    <>
+      <ol className="font-light list-decimal pl-6 text-left space-y-1">
+        <li>click()</li>
+        <li>getCss()</li>
+        <li>getSize()</li>
+        <li>isEnabled()</li>
+        <li>getLocation()</li>
+        <li>getText()</li>
+        <li>driver navigation commands</li>
+      </ol>
+    </>
+  );
+};

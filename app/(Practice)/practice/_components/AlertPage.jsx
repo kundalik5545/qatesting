@@ -177,10 +177,11 @@ const QAPlayGround = () => {
           </p>
         )}
       </div>
-      <p className="text-blue-500">Advance UI Alerts</p>
-      <div>
+
+      <div className="flex items-center justify-between">
         <p className="text-sm sm:text-base font-medium">
-          Advance Ui Alert - verify share link and close button
+          <span className="font-semibold text-blue-500">Advance Ui Alert</span>{" "}
+          -<p> verify share link and close button.</p>
         </p>
 
         <DialogCloseButton />
