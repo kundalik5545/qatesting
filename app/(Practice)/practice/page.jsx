@@ -126,7 +126,7 @@ const allElements = [
     logo: "/mainicons/simtable.svg",
     Description: "It's all about rows & columns",
     footerTitle: "Simple Table",
-    link: "/practice/smiple-table",
+    link: "/practice/simple-table",
   },
   {
     title: "Table",
@@ -134,6 +134,13 @@ const allElements = [
     Description: "It's little complicated but give a try",
     footerTitle: "Advance Table",
     link: "/practice/advance-table",
+  },
+  {
+    title: "Table",
+    logo: "/mainicons/simtable.svg",
+    Description: "It's little complicated but give a try",
+    footerTitle: "Test Table",
+    link: "/practice/test",
   },
   {
     title: "Calendar",

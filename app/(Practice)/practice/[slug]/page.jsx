@@ -28,6 +28,10 @@ import RadioButtonPage from "../_components/RadioButton";
 import WindowsPage from "../_components/WindowsPage";
 import WaitPage from "../_components/WaitPage";
 import FilePage from "../_components/FileUploadDownloadPage";
+import CalendarPage from "../_components/CalendarPage";
+import SimpleTablePage from "../_components/TablePage";
+import TestPage from "../_components/ElementsPage";
+import DataTable from "../_components/TestTablePage";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
@@ -109,7 +113,10 @@ const PracticePage = async ({ params }) => {
       radio: RadioButtonPage,
       window: WindowsPage,
       waits: WaitPage,
+      calendar: CalendarPage,
       "upload-download": FilePage,
+      "simple-table": SimpleTablePage,
+      test: DataTable,
     };
 
     const DynamicComponent = componentMapping[slug] || null;
