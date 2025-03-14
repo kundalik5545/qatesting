@@ -2,6 +2,13 @@
 
 import React, { useState } from "react";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Card,
   CardContent,
   CardFooter,
@@ -9,7 +16,6 @@ import {
 } from "@/components/ui/card";
 import { GraduationCap } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 const SelectPage = () => {
   const youtubeLink = "";
@@ -64,12 +70,83 @@ const SelectPage = () => {
 export default SelectPage;
 
 const QAPlayGround = () => {
+  const [selectedFruit, setSelectedFruit] = useState("");
+  const [selectedHero, setSelectedHero] = useState([]);
+  const [selectedLanguage, setSelectedLanguage] = useState("JavaScript");
+  const [selectedCountry, setSelectedCountry] = useState("Argentina");
+
   return (
     <>
-      <p className="text-sm sm:text-base font-medium">
-        <span className="font-semibold text-blue-500">Simple Alert</span> -
-        <p>just click on simple alert and verify the alert text</p>
-      </p>
+      {/* Select the apple using visible text */}
+      <div>
+        <p className="font-semibold mb-2">
+          Select the apple using visible text
+        </p>
+        <Select onValueChange={setSelectedFruit}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="apple">Apple</SelectItem>
+            <SelectItem value="banana">Banana</SelectItem>
+            <SelectItem value="grapes">Grapes</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Select your super hero's */}
+      <div>
+        <p className="font-semibold mb-2">Select your super hero's</p>
+        <select
+          multiple
+          className="w-full border p-2 rounded-md "
+          onChange={(e) =>
+            setSelectedHero(
+              Array.from(e.target.selectedOptions, (option) => option.value)
+            )
+          }
+        >
+          <option value="ant-man">Ant-Man</option>
+          <option value="aquaman">Aquaman</option>
+          <option value="avengers">The Avengers</option>
+          <option value="batman">Batman</option>
+        </select>
+      </div>
+
+      {/* Select the last programming language */}
+      <div>
+        <p className="font-semibold mb-2">
+          Select the last programming language and print all the options
+        </p>
+        <Select onValueChange={setSelectedLanguage}>
+          <SelectTrigger>
+            <SelectValue placeholder="JavaScript" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="python">Python</SelectItem>
+            <SelectItem value="java">Java</SelectItem>
+            <SelectItem value="javascript">JavaScript</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Select India using value */}
+      <div>
+        <p className="font-semibold mb-2">
+          Select India using value & print the selected value
+        </p>
+        <Select onValueChange={setSelectedCountry}>
+          <SelectTrigger>
+            <SelectValue placeholder="Argentina" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="india">India</SelectItem>
+            <SelectItem value="usa">USA</SelectItem>
+            <SelectItem value="argentina">Argentina</SelectItem>
+            <SelectItem value="argentina">UK</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
     </>
   );
 };
@@ -78,12 +155,15 @@ const LearningInsight = () => {
   return (
     <>
       <ol className="font-light list-decimal pl-6 text-left space-y-1">
-        <li>accept()</li>
-        <li>dismiss()</li>
-        <li>waits()</li>
+        <li>SelectElement Class</li>
+        <li>selectByVisibleText()</li>
+        <li>selectByIndex()</li>
+        <li>selectByValue()</li>
         <li>sendKeys()</li>
-        <li>switchTo()</li>
-        <li>getText()</li>
+        <li>getOptions()</li>
+        <li>isMultiple()</li>
+        <li>getFirstSelectedOption()</li>
+        <li>How to select mutiple values</li>
       </ol>
     </>
   );

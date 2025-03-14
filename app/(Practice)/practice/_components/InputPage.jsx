@@ -43,7 +43,7 @@ const InputPage = () => {
                   </Label>
                   <Input
                     id="appendText"
-                    defaultValue="I am good dsf"
+                    defaultValue="I am good "
                     className="text-sm sm:text-base"
                   />
                 </div>

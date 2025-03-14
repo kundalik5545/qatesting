@@ -26,6 +26,7 @@ import AlertPage from "../_components/AlertPage";
 import { Calendar } from "lucide-react";
 import RadioButtonPage from "../_components/RadioButton";
 import WindowsPage from "../_components/WindowsPage";
+import WaitPage from "../_components/WaitPage";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
@@ -106,6 +107,7 @@ const PracticePage = async ({ params }) => {
       alert: AlertPage,
       radio: RadioButtonPage,
       window: WindowsPage,
+      waits: WaitPage,
     };
 
     const DynamicComponent = componentMapping[slug] || null;
