@@ -27,6 +27,7 @@ import { Calendar } from "lucide-react";
 import RadioButtonPage from "../_components/RadioButton";
 import WindowsPage from "../_components/WindowsPage";
 import WaitPage from "../_components/WaitPage";
+import FilePage from "../_components/FileUploadDownloadPage";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
@@ -38,7 +39,7 @@ export async function generateStaticParams() {
 
 // Generate dynamic metadata for each blog post
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   if (!slug) return notFound();
 
   const filePath = path.join(process.cwd(), "Blog/ElementBlogs", `${slug}.md`);
@@ -67,7 +68,7 @@ export async function generateMetadata({ params }) {
 
 // Blog Post Component
 const PracticePage = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const filePath = path.join(process.cwd(), "Blog/ElementBlogs", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) return notFound();
@@ -108,6 +109,7 @@ const PracticePage = async ({ params }) => {
       radio: RadioButtonPage,
       window: WindowsPage,
       waits: WaitPage,
+      "upload-download": FilePage,
     };
 
     const DynamicComponent = componentMapping[slug] || null;
