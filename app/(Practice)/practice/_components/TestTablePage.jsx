@@ -77,7 +77,7 @@ export default function DataTable() {
         />
         <Select onValueChange={(value) => setPerPage(Number(value))}>
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select No. of Records" />
+            <SelectValue placeholder="5" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="5">5</SelectItem>

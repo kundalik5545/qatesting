@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -64,6 +64,17 @@ const ButtonPage = () => {
 export default ButtonPage;
 
 const QAPlayGround = () => {
+  const [lastAction, setLastAction] = useState("");
+
+  const handleRightClick = useCallback((e) => {
+    e.preventDefault();
+    setLastAction("You Right-clicked on button!");
+  }, []);
+
+  const handleDoubleClick = useCallback(() => {
+    setLastAction("You Double-clicked on button!");
+  }, []);
+
   return (
     <>
       <div className="button-section">
@@ -125,6 +136,36 @@ const QAPlayGround = () => {
         </p>
         <ClickHoldButton />
       </div>
+
+      <div>
+        <p className="label">
+          Click and Hold Button for 1.5 sec and verify button text
+        </p>
+        <Button
+          onDoubleClick={handleDoubleClick}
+          id="double-click"
+          aria-label="Double Click Me"
+          className="mt-2"
+        >
+          Double Click Me
+        </Button>
+      </div>
+      <div>
+        <p className="label">Right click on button</p>
+        <Button
+          onContextMenu={handleRightClick}
+          id="right-click"
+          variant="outline"
+          aria-label="Right Click Me"
+          className="mt-2"
+        >
+          Right Click Me
+        </Button>
+      </div>
+
+      <p className="text-white dark:text-gray-700 bg-blue-400 py-2 rounded-lg px-2">
+        {lastAction || "No action performed yet."}
+      </p>
     </>
   );
 };
@@ -184,6 +225,8 @@ const LearningInsight = () => {
         <li>isEnabled()</li>
         <li>getLocation()</li>
         <li>getText()</li>
+        <li>double click</li>
+        <li>right click</li>
         <li>driver navigation commands</li>
       </ol>
     </>
