@@ -1,20 +1,24 @@
 export const siteMapUrls = [
-  //Elements
-  { url: "elements/text-box" },
-  { url: "elements/check-box" },
-  { url: "elements/radio-button" },
-  { url: "elements/button" },
-  { url: "elements/links" },
-  { url: "elements/dynamic-properties" },
-  { url: "elements/upload-download" },
-
-  //Forms
-  { url: "forms/basic-details" },
-
-  // ALerts
-  { url: "alert-window/alerts" },
-  { url: "alert-window/browser-window" },
-  { url: "alert-window/frames" },
-  { url: "alert-window/modal-dialogs" },
-  { url: "alert-window/nested-frames" },
+  { url: "practice/pom" },
+  { url: "practice/input" },
+  { url: "practice/button" },
+  { url: "practice/select" },
+  { url: "practice/links" },
+  { url: "practice/alert" },
+  { url: "practice/frame" },
+  { url: "practice/radio" },
+  { url: "practice/window" },
+  { url: "practice/elements" },
+  { url: "practice/drag" },
+  { url: "practice/drop" },
+  { url: "practice/sort" },
+  { url: "practice/multi-select" },
+  { url: "practice/slider" },
+  { url: "practice/waits" },
+  { url: "practice/simple-table" },
+  { url: "practice/advance-table" },
+  { url: "practice/calendar" },
+  { url: "practice/forms" },
+  { url: "practice/upload-download" },
+  { url: "practice/shadow-dom" },
 ];
