@@ -21,7 +21,7 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/elements/text-box" passHref>
+          <Link href="/practice" passHref>
             <Button
               size="lg"
               className="px-8 bg-primary text-primary-foreground hover:bg-primary/90"

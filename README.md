@@ -1,119 +1,57 @@
-# Welcome to Qa Testing
+# QA Testing Playground
 
-## Create New Project
+This project aims to help new automation test engineers practice automation testing with different web elements.
 
-```
-npx create-next-app@latest
-```
+## Getting Started
 
-## Now edit layout.js file to setup font and header, main section, footer section
+### Prerequisites
 
-```js
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "sonner";
-import Header from "@/components/Header";
+- Web browser (Chrome, Firefox, Safari)
+- Basic understanding of web automation tools like Selenium, Cypress, or Playwright
 
-const inter = Inter({ subsets: ["latin"] });
+### Accessing the Application
 
-export const metadata = {
-  title: "Qa Testing",
-  description: "Practice Automation Testing.",
-};
+1. Visit the QA Playground at [https://qaplayground.com](https://qaplayground.com)
+2. No login required - the application is free to use
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={` ${inter.className}`}>
-        {/* header/ Navbar */}
-        <Header />
+## Features
 
-        <main className="min-h-screen">{children}</main>
-        <Toaster richColors />
+The playground includes various test scenarios for practicing:
 
-        {/* footer */}
-        <footer className="bg-blue-50 py-12">
-          <div className="container mx-auto px-4 text-center text-gray-600">
-            <p>Made with 💖 by Coder Jk..</p>
-            <p>&copy;2024 All Rights Reserved.</p>
-          </div>
-        </footer>
-      </body>
-    </html>
-  );
-}
-```
+- It covers all basic and advance html elements
+- You can practice based on elements you like
+- Form submissions
+- Dynamic elements
+- AJAX requests
+- Tables and data grids
+- Drag and drop operations
+- iFrames
+- Alerts and popups
 
-### Install below packages
+## How to Use
 
-```
-npx shadcn@latest add input label button select card badge calendar avatar checkbox drawer dropdown-menu popover progress switch table tooltip sonner
+1. Navigate to the desired test scenario using the main menu
+2. Each section contains information about the elements and expected behaviors
+3. Use your automation tool to interact with the elements
+4. Check your test results against the expected outcomes
 
+## Examples
+
+```csharp
+// Simple C#/Selenium example
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+IWebDriver driver = new ChromeDriver();
+driver.Navigate().GoToUrl("https://qaplayground.com");
+IWebElement button = driver.FindElement(By.XPath("//h1"));
+button.Click();
 ```
 
-### Some questions
+## Contributing
 
-1. You need to create a components.json file to add components. Proceed? => yes
-2. √ Which style would you like to use? » New York
-3. √ Which color would you like to use as the base color? » Slate
-4. √ Would you like to use CSS variables for theming? ... no / yes => Yes
+If you'd like to contribute additional test scenarios, please submit a pull request.
 
-### For How would you like to proceed?
+## Support
 
-```
---legacy-peer-deps
-```
-
-## Add custome css in globals.css
-
-```css
-@layer utilities {
-  .gradient {
-    @apply bg-gradient-to-br from-blue-600 to-purple-600;
-  }
-
-  .gradient-title {
-    @apply gradient font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
-  }
-}
-
-.hero-image-wrapper {
-  perspective: 1000px;
-}
-
-.hero-image {
-  /* transform: rotateX(20deg) scale(0.9) translateY(-50); */
-  transform: rotateX(15deg) scale(1);
-  transition: transform 0.5s ease-out;
-  will-change: transform;
-}
-
-.hero-image.scrolled {
-  transform: rotateX(0deg) scale(1) translateY(40px);
-}
-```
-
-## Add page not found 404
-
-Create a file inside app folder called exact not-found.jsx
-
-```jsx
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-
-export default function NotFound() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[100vh] px-4 text-center">
-      <h1 className="text-6xl font-bold gradient-title mb-4">404</h1>
-      <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
-      <p className="text-gray-600 mb-8">
-        Oops! The page you&apos;re looking for doesn&apos;t exist or has been
-        moved.
-      </p>
-      <Link href="/">
-        <Button>Return Home</Button>
-      </Link>
-    </div>
-  );
-}
-```
+If you encounter any issues, please open a ticket in the Issues section of this repository.
