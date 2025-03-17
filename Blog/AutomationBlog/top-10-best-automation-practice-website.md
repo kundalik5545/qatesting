@@ -1,5 +1,5 @@
 ---
-blogId: "blog01"
+id: 1
 title: Top 10 best automation practice website
 description: "Boost your skills with the best automation practice websites! Perfect for all levels, these sites offer real-world challenges. Click now to elevate your expertise!"
 author: random coders

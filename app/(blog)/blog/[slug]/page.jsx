@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: data.title || "QA Playground - Practice automation",
       description: data.description?.slice(0, 200) || "Practice automation",
-      url: `${basicDetails.websiteURL}/elements/${slug}`,
+      url: `${basicDetails.websiteURL}/blog/${slug}`,
       images: data.image ? [{ url: data.image, alt: data.title }] : [],
     },
     alternates: {
