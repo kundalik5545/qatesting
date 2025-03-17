@@ -19,7 +19,7 @@ import { basicDetails } from "@/data/BasicSetting";
 
 // Fetch all blog slugs dynamically
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "Blog/ElementBlogs");
+  const postsDirectory = path.join(process.cwd(), "Blog/AutomationBlog");
   return fs.readdirSync(postsDirectory).map((filename) => ({
     slug: filename.replace(/\.md$/, ""),
   }));
@@ -30,7 +30,11 @@ export async function generateMetadata({ params }) {
   const { slug } = params;
   if (!slug) return notFound();
 
-  const filePath = path.join(process.cwd(), "Blog/ElementBlogs", `${slug}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    "Blog/AutomationBlog",
+    `${slug}.md`
+  );
   if (!fs.existsSync(filePath)) return notFound();
 
   const { data } = matter(fs.readFileSync(filePath, "utf-8"));
@@ -47,7 +51,7 @@ export async function generateMetadata({ params }) {
       images: data.image ? [{ url: data.image, alt: data.title }] : [],
     },
     alternates: {
-      canonical: `${basicDetails.websiteURL}/elements/${slug}`,
+      canonical: `${basicDetails.websiteURL}/blog/${slug}`,
     },
   };
 }
@@ -55,7 +59,11 @@ export async function generateMetadata({ params }) {
 // Blog Post Component
 const BlogPost = async ({ params }) => {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), "Blog/ElementBlogs", `${slug}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    "Blog/AutomationBlog",
+    `${slug}.md`
+  );
 
   if (!fs.existsSync(filePath)) return notFound();
 
