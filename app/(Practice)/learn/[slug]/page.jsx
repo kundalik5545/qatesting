@@ -56,11 +56,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: data.title || "QA Playground - Practice automation",
       description: data.description?.slice(0, 200) || "Practice automation",
-      url: `${basicDetails.websiteURL}/practice/${slug}`,
+      url: `${basicDetails.websiteURL}/learn/${slug}`,
       images: data.image ? [{ url: data.image }] : [],
     },
     alternates: {
-      canonical: `${basicDetails.websiteURL}/practice/${slug}`,
+      canonical: `${basicDetails.websiteURL}/learn/${slug}`,
     },
   };
 }

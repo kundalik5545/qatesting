@@ -22,7 +22,18 @@ Explore these automation practice websites and take your testing skills to the n
 
 ## List of automation practice websites
 
-| Demo Website Name                                     | Type                           | Description                                                                             |
-| ----------------------------------------------------- | ------------------------------ | --------------------------------------------------------------------------------------- |
-| [QA PlayGround](https://www.qaplayground.com/)        | Web elements and UI components | Best to practice individual elements and ready made components with pre made test cases |
-| [Automation Practice](http://automationpractice.com/) | E-commerce site                | Practice automation on a full-fledged e-commerce site                                   |
+| Demo Website Name                                                 | Type                            | Description                                                                             |
+| ----------------------------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------- |
+| [QA PlayGround](https://www.qaplayground.com/)                    | Web elements and UI components  | Best to practice individual elements and ready-made components with pre-made test cases |
+| [Automation Practice](http://automationpractice.com/)             | E-commerce site                 | Practice automation on a full-fledged e-commerce site                                   |
+| [DemoQA](https://demoqa.com/)                                     | Web elements and forms          | Provides multiple web elements like text boxes, buttons, alerts, and tables             |
+| [SauceDemo](https://www.saucedemo.com/)                           | E-commerce site                 | A simple e-commerce site to practice login, cart, and checkout automation               |
+| [The Internet](https://the-internet.herokuapp.com/)               | Various UI scenarios            | Contains broken links, authentication popups, forms, and challenging elements           |
+| [OrangeHRM](https://opensource-demo.orangehrmlive.com/)           | HR Management System            | Test scenarios for employee management, recruitment, and leave applications             |
+| [Parabank](https://parabank.parasoft.com/)                        | Online banking                  | Simulates an online banking environment for testing transactions, loans, and accounts   |
+| [Opencart](https://demo.opencart.com/)                            | E-commerce site                 | Open-source shopping cart system with product search, checkout, and admin panel         |
+| [UI Test Automation Playground](https://uitestingplayground.com/) | UI elements testing             | Helps practice UI automation on common elements like buttons, forms, and alerts         |
+| [PHP Travels](https://www.phptravels.net/demo/)                   | Travel booking site             | Covers scenarios like booking flights, hotels, and customer authentication              |
+| [Ghost Blogging](https://demo.ghost.io/)                          | Content Management System (CMS) | Good for testing login, dashboard interactions, and content creation workflows          |
+
+These sites offer diverse testing opportunities for UI elements, login scenarios, e-commerce workflows, and more. Let me know if you need any changes! 🚀
