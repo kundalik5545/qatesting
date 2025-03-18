@@ -42,8 +42,12 @@ const AlertPage = () => {
 
   return (
     <div className="pt-2">
+      {/* Heading */}
+      <h2 className="text-2xl md:text-3xl lg:text-4xl pb-4 font-semibold text-gray-900 dark:text-white text-start transition-all duration-300 ease-in-out">
+        Alert
+      </h2>
       {/* Main layout */}
-      <div className="flex flex-col sm:flex-row w-full gap-4">
+      <div className="flex flex-col sm:flex-row w-full gap-8">
         {/* Main Card Section */}
         <div className="w-full sm:w-2/3 pb-5 md:pb-0">
           <Card className="w-full shadow-lg rounded-xl dark:bg-gray-800">
@@ -199,7 +203,7 @@ const QAPlayGround = () => {
 const LearningInsight = () => {
   return (
     <>
-      <ol className="font-light list-decimal pl-6 text-left space-y-1">
+      <ol className="font-light list-decimal pl-10 text-left space-y-1">
         <li>accept()</li>
         <li>dismiss()</li>
         <li>waits()</li>

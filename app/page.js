@@ -25,7 +25,7 @@ const sections = [
         buttonText: "Practice Automation TC",
       },
       {
-        link: "/learn/logical-programs-list",
+        link: "/learn/logical-programs-list-to-crack-interviews",
         buttonText: "Logical Programs",
       },
     ],

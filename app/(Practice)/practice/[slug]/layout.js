@@ -2,8 +2,12 @@
 
 import React from "react";
 
-const Practicelayout = ({ children }) => {
-  return <div className="">{children}</div>;
+const PracticeSlugLayout = ({ children }) => {
+  return (
+    <div className="container mx-auto max-w-5xl text-foreground bg-background">
+      {children}
+    </div>
+  );
 };
 
-export default Practicelayout;
+export default PracticeSlugLayout;

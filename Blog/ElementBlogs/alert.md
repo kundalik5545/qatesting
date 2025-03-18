@@ -8,6 +8,8 @@ keywords: "simple alert, prompt alert, confirmation alert, alerts using selenium
 testing: ["sample", "accept"]
 ---
 
+## How to handle alerts using selenium
+
 ## Introduction
 
 There are 3 types of alert such as - Simple alert, Prompt alert, and confitmation alert. To automate the alert selenium provoide switchTo() method which changes focus of selenium webdriver to alert.

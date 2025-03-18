@@ -1,42 +1,63 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import React from "react";
-import LogicalPrograms from "../_components/LogicalPrograms";
-import AutomationTestCasesPage from "../_components/AutomationTestCases";
-import CoursesPage from "../_components/CoursesPage";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { notFound } from "next/navigation";
+import { unified } from "unified";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import rehypeSlug from "rehype-slug";
+import rehypePrettyCode from "rehype-pretty-code";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import Image from "next/image";
 import { basicDetails } from "@/data/BasicSetting";
+import { Calendar } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
+// Blog Components
+import CoursesPage from "../_components/CoursesPage";
+import LogicalProgramsTable from "../_components/LogicalPrograms";
+
+// Blog Slug to Component Mapping
+const componentMapping = {
+  courses: CoursesPage,
+  "logical-programs-list-to-crack-interviews": LogicalProgramsTable,
+};
+
+// Fetch all blog slugs dynamically
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), "Blog/AutomationBlog");
+  return fs.readdirSync(postsDirectory).map((filename) => ({
+    slug: filename.replace(/\.md$/, ""),
+  }));
+}
+
+// Generate dynamic metadata for SEO
 export async function generateMetadata({ params }) {
   const { slug } = params;
-  if (!slug) return notFound();
+  const filePath = path.join(
+    process.cwd(),
+    "Blog/AutomationBlog",
+    `${slug}.md`
+  );
 
-  const learnPagesMetadata = {
-    "logical-programs-list": {
-      title: "Practice logical proggram that asked in interview/",
-      description:
-        "Practice logical prggrams that are asked in top MNC company during automation testing interview. We provoided solution for each logical proggram.",
-    },
-    "automation-test-cases": {
-      title: "Practice DemoAutomation Test Cases",
-      description:
-        "Detailed automation test cases for various scenarios inclueds registration, login, calendar, button, links, select class and many features.",
-    },
-    courses: {
-      title: "Free Courses on Automation testing with selenium",
-      description: "Explore our wide range of courses.",
-    },
-  };
-  const pageMetadata = learnPagesMetadata[slug] || null;
+  if (!fs.existsSync(filePath)) return notFound();
 
-  if (!pageMetadata) return notFound();
+  const { data } = matter(fs.readFileSync(filePath, "utf-8"));
 
   return {
-    title: `${pageMetadata.title?.slice(0, 60) || "New Blog Post"}`,
-    description:
-      pageMetadata.description?.slice(0, 160) || "Alternate description",
-    other: {
-      author: pageMetadata.author || "Random Coders",
+    title: data.title ? `${data.title.slice(0, 60)}` : "New Blog Post",
+    description: data.description?.slice(0, 160) || "Automation blog",
+    keywords: data.keywords || "automation, selenium",
+    author: data.author || "Random Coders",
+    openGraph: {
+      title: data.title || "QA Playground - Practice automation",
+      description: data.description?.slice(0, 200) || "Practice automation",
+      url: `${basicDetails.websiteURL}/practice/${slug}`,
+      images: data.image ? [{ url: data.image }] : [],
     },
     alternates: {
       canonical: `${basicDetails.websiteURL}/practice/${slug}`,
@@ -44,40 +65,102 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const LearnPage = async ({ params }) => {
+// Blog Post Component
+const LearnMainPage = async ({ params }) => {
   const { slug } = params;
-
-  const allComponents = {
-    "logical-programs-list": LogicalPrograms,
-    "automation-test-cases": AutomationTestCasesPage,
-    courses: CoursesPage,
-  };
-
-  const DynamicComponent = allComponents[slug] || null;
-
-  return (
-    <div>
-      {DynamicComponent ? (
-        <DynamicComponent />
-      ) : (
-        <>
-          <div className="flex flex-col items-center justify-center min-h-[100vh] px-4 text-center">
-            <h1 className="text-6xl font-bold gradient-title mb-4">204</h1>
-            <h2 className="text-2xl font-semibold mb-4">
-              Page Under Construction
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Oops! The page you&apos;re looking for is under construction.
-              Please try again later.
-            </p>
-            <Link href="/" passHref>
-              <Button>Return Home</Button>
-            </Link>
-          </div>
-        </>
-      )}
-    </div>
+  const filePath = path.join(
+    process.cwd(),
+    "Blog/AutomationBlog",
+    `${slug}.md`
   );
+
+  if (!fs.existsSync(filePath)) return notFound();
+
+  try {
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { content, data } = matter(fileContent);
+
+    // Convert Markdown to HTML
+    const htmlContent = (
+      await unified()
+        .use(remarkParse)
+        .use(remarkGfm)
+        .use(remarkRehype)
+        .use(rehypeStringify)
+        .use(rehypeSlug)
+        .use(rehypeAutolinkHeadings)
+        .use(rehypePrettyCode, {
+          theme: "github-dark",
+          transformers: [
+            transformerCopyButton({
+              visibility: "always",
+              feedbackDuration: 3000,
+            }),
+          ],
+        })
+        .process(content)
+    ).toString();
+
+    const DynamicComponent = componentMapping[slug] || null;
+
+    return (
+      <div className="container mx-auto px-4 lg:px-8">
+        {data.isBlog === "Yes" ? (
+          <>
+            {/* Blog Header */}
+            <header className="max-w-5xl mx-auto text-start text-foreground bg-background py-6">
+              <h1 className="text-3xl sm:text-4xl font-semibold  pb-2">
+                {data.title}
+              </h1>
+              <div className="flex flex-wrap justify-start items-center gap-3 text-sm mt-2 pb-2">
+                <Badge className="px-2 py-1">By {data.author || "Admin"}</Badge>
+                <p className="flex items-center gap-1">
+                  <Calendar size={18} />
+                  {new Date(data.date).toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+              <hr className="" />
+            </header>
+
+            {/* Blog Image */}
+            {data.image && (
+              <div className="flex justify-center mb-6">
+                <Image
+                  src={data.image}
+                  alt={data.title}
+                  width={800}
+                  height={400}
+                  className="rounded-lg shadow-lg w-full max-w-2xl object-cover"
+                  priority
+                />
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            {/* Main Playground */}
+            <section
+              className={cn("pb-20", data?.isBlog === "Yes" && "hidden")}
+            >
+              {DynamicComponent && <DynamicComponent />}
+            </section>
+          </>
+        )}
+
+        {/* Blog Content */}
+        <article className="prose dark:prose-invert max-w-5xl mx-auto">
+          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        </article>
+      </div>
+    );
+  } catch (error) {
+    console.error("Error reading blog post:", error);
+    return notFound();
+  }
 };
 
-export default LearnPage;
+export default LearnMainPage;
