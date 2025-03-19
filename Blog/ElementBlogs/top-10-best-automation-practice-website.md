@@ -6,7 +6,7 @@ author: random coders
 date: 8 march 2025
 keywords: "button, right click using selenium, double click using selenium"
 slug: top-10-best-automation-practice-website
-image: "/Images/blogs/b3.jpg"
+image: "/Images/blogs/id_01 Top 10 best automation practice websites.webp"
 isBlog: Yes
 ---
 

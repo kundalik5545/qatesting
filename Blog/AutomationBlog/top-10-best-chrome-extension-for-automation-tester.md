@@ -6,7 +6,7 @@ author: random coders
 date: 18 march 2025
 keywords: "button, right click using selenium, double click using selenium"
 slug: top-10-best-chrome-extension-for-automation-tester
-image: "/Images/blogs/b3.jpg"
+image: "/Images/blogs/id-02-people-in-meeting-with-laptop.webp"
 isBlog: Yes
 ---
 
