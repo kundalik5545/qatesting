@@ -7,7 +7,7 @@ export const blogs = [
     author: "random coders",
     date: "8 march 2025",
     category: ["automation", "selenium"],
-    image: "/images/blogs/b3.jpg",
+    image: "/Images/blogs/id_01 Top 10 best automation practice websites.webp",
     slug: "top-10-best-automation-practice-website",
     isBlog: "Yes",
     mainPageLink: "/practice",
