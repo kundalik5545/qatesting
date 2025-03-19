@@ -30,6 +30,9 @@ export const metadata = {
     site_name: basicDetails.websiteName,
     title: `${basicDetails.websiteName}: Practice Automation Testing with Selenium`,
     description: basicDetails.websiteDescription,
+    icons: {
+      icon: "/favicon.ico",
+    },
     url: basicDetails.websiteURL,
     images: [
       {

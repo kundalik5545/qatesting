@@ -21,4 +21,7 @@ export const siteMapUrls = [
   { url: "practice/forms" },
   { url: "practice/upload-download" },
   { url: "practice/shadow-dom" },
+  { url: "practice/top-10-best-automation-practice-website" },
+  { url: "learn/logical-programs-list-to-crack-interviews" },
+  { url: "learn/top-10-best-chrome-extension-for-automation-tester" },
 ];

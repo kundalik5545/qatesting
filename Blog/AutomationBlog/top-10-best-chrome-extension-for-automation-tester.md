@@ -11,3 +11,5 @@ isBlog: Yes
 ---
 
 ## Introduction
+
+Chrome extensions are very useful automation and manual testing. They help us to reduce our work efforts and increase the eficiency.
