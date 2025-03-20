@@ -59,7 +59,7 @@ export async function generateStaticParams() {
 
 // Generate dynamic metadata for SEO
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const filePath = path.join(process.cwd(), "Blog/ElementBlogs", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) return notFound();
@@ -85,7 +85,7 @@ export async function generateMetadata({ params }) {
 
 // Blog Post Component
 const PracticePage = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const filePath = path.join(process.cwd(), "Blog/ElementBlogs", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) return notFound();
