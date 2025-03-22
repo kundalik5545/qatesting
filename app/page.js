@@ -35,6 +35,7 @@ const sections = [
     description: "Learn more about our latest SAAS products.",
     buttons: [
       { link: "/", buttonText: "QA PlayGround" },
+      { link: "https://qa-xpath.vercel.app/", buttonText: "QA XPath" },
       {
         link: "https://balance-sheet-app.vercel.app/",
         buttonText: "Expense Tracker",
