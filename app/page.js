@@ -14,7 +14,13 @@ const sections = [
   {
     title: "Free Tutorials",
     description: "Free courses on software testing & development.",
-    buttons: [{ link: "/learn/courses", buttonText: "Explore Free Courses" }],
+    buttons: [
+      { link: "/learn/courses", buttonText: "Explore Free Courses" },
+      {
+        link: "https://github.com/kundalik5545/QA_PlayGround_Automation_Framework",
+        buttonText: "Automation FrameWork",
+      },
+    ],
   },
   {
     title: "Practice Logic",
@@ -66,11 +72,15 @@ const LandingPage = () => {
                   <Link
                     href={el.link}
                     rel={
-                      el.link.includes("vercel")
+                      el.link.includes("vercel") || el.link.includes("github")
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    target={el.link.includes("vercel") ? "_blank" : "_self"}
+                    target={
+                      el.link.includes("vercel") || el.link.includes("github")
+                        ? "_blank"
+                        : "_self"
+                    }
                     key={btnIndex}
                   >
                     <Button className="bg-teal-800 text-white px-4 py-2 rounded-full">
