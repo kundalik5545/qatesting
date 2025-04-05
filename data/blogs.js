@@ -52,4 +52,18 @@ export const blogs = [
     isBlog: "Yes",
     mainPageLink: "/learn",
   },
+  {
+    id: 5,
+    title: "How to Write Effective Test Cases with Real-World Examples",
+    description:
+      "Writing effective test cases is one of the most essential skills a QA professional must master. Whether you’re testing a simple login form or a complex multi-step workflow, a well-written test case ensures your application behaves as expected and prevents bugs from reaching production.",
+    author: "random coders",
+    date: "04 April 2025",
+    category: ["automation", "tools"],
+    image: "/Images/blogs/bp-5-1.webp",
+    keywords: "test cases",
+    slug: "how-to-write-effective-test-cases-with-real-world-examples",
+    isBlog: "Yes",
+    mainPageLink: "/learn",
+  },
 ];
