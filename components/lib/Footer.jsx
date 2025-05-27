@@ -12,7 +12,20 @@ const Footer = () => {
           💡 Helping Test Automation Engineers Excel Through Learning.
         </p>
       </div>
-
+      <div className="contact-us flex gap-3 underline ">
+        <a href="/about-me" className="hover:text-blue-600">
+          About Me
+        </a>
+        <a href="/about-us" className="hover:text-blue-600">
+          About Us
+        </a>
+        <a href="/contact-us" className="hover:text-blue-600">
+          Contact Us
+        </a>
+        <a href="/privacy-policy" className="hover:text-blue-600">
+          Pricay Policy
+        </a>
+      </div>
       <div
         className="p-5 text-base text-gray-500 dark:text-gray-400 text-center"
         aria-label="Copy Rights Warning"

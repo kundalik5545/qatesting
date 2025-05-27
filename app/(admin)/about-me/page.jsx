@@ -54,7 +54,7 @@ const ProfilePage = () => {
     },
     {
       role: "Junior Analyst",
-      company: "Mindtree",
+      company: "",
       duration: "Jun 2019 - Aug 2022",
     },
   ];
