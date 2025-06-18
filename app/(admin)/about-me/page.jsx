@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { Mail, Linkedin, Github, Youtube, Twitter, Globe } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  Youtube,
+  Twitter,
+  Globe,
+  CalendarDays,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -13,9 +21,13 @@ export const metadata = {
 
 const ProfilePage = () => {
   const socialLinks = [
-    { href: "mailto:randomcoders1@gmail.com", icon: <Mail />, label: "Email" },
     {
-      href: "https://www.linkedin.com/in/randomcoders",
+      href: "mailto:kundalikjadhav5545@gmail.com",
+      icon: <Mail />,
+      label: "Email",
+    },
+    {
+      href: "https://www.linkedin.com/in/kundalikjadhav1516",
       icon: <Linkedin />,
       label: "LinkedIn",
     },
@@ -35,7 +47,7 @@ const ProfilePage = () => {
       label: "Twitter",
     },
     {
-      href: "https://random-coders.vercel.app/",
+      href: "https://www.qaplayground.com/",
       icon: <Globe />,
       label: "Website",
     },
@@ -46,16 +58,22 @@ const ProfilePage = () => {
       role: "Automation Tester",
       company: "Lumera",
       duration: "Jan 2025 - Present",
+      project:
+        "DMP (DataHub) Software –  Developed an automation framework using C#, Selenium, and NUnit with database integration for data-driven testing.  Automated Client Portal and EmployerHub to ensure robust pre-production testing.",
     },
     {
       role: "Test Analyst",
       company: "ITM",
       duration: "Aug 2022 - Jan 2025",
+      project:
+        "Penscope (Pension Administration) – Developed an automation framework using C#, Selenium, and NUnit with JSON-based data-driven testing. Which reduce 60% manual testing effort.",
     },
     {
       role: "Junior Analyst",
       company: "Mindtree",
       duration: "Jun 2019 - Aug 2022",
+      project:
+        "Banking Admin – Performed manual and API testing for banking applications, focusing on quality and reliability.",
     },
   ];
 
@@ -74,9 +92,42 @@ const ProfilePage = () => {
   ];
 
   const keyAchivement = [
-    "Reduced manual testing effort by 60% through automation.",
-    "Enhanced test coverage, reducing production defects by 30%.",
-    "Implemented SOLID principles like SRP, LOC, DRY for better framework maintainability.",
+    "Employee of the month and top performer.",
+    "Successfully reduced manual testing effort by 60% through automation.",
+    "Contributed to the development of a comprehensive automation framework.",
+    "Implemented CI/CD pipelines for efficient software delivery.",
+    "Recognized for delivering high-quality software solutions in the UK Pension domain.",
+  ];
+
+  const myGithub = [
+    {
+      name: "QA PlayGround",
+      description:
+        "A comprehensive automation testing platform with interactive labs, real-world scenarios, and built-in UI components for hands-on learning.",
+      url: "https://github.com/kundalik5545/qatesting",
+      liveUrl: "https://qatesting.vercel.app/",
+    },
+    {
+      name: "Random Coders Blog",
+      description:
+        "A modern blogging platform for sharing automation, QA, and coding tutorials, featuring markdown support and a clean, responsive UI.",
+      url: "https://github.com/kundalik5545/random_coders",
+      liveUrl: "https://random-coders.vercel.app/",
+    },
+    {
+      name: "QA Xpath",
+      description:
+        "A full-stack MERN application for managing and visualizing XPath queries, demonstrating best practices in React, Node.js, and MongoDB.",
+      url: "https://github.com/kundalik5545/qa-xpath",
+      liveUrl: "https://qa-xpath.vercel.app/",
+    },
+    {
+      name: "Expense Tracker",
+      description:
+        "A full-stack MERN application to manage and visualize personal expenses, demonstrating best practices in React, Node.js, and MongoDB.",
+      url: "https://github.com/kundalik5545/balance-sheet",
+      liveUrl: "https://balance-sheet-app.vercel.app/",
+    },
   ];
 
   return (
@@ -184,13 +235,18 @@ const ProfilePage = () => {
           <ul className="mt-4 space-y-4">
             {myExp.map((job, index) => (
               <li key={index} className="border-l-4 border-primary pl-4">
-                <h3 className="font-semibold">
-                  {job.role} - {job.company}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {" "}
-                  <CalendarDays />
-                  {job.duration}
+                <p className="flex items-center justify-between">
+                  <h3 className="font-semibold ">
+                    {job.role} - {job.company}
+                  </h3>
+                  <p className="text-sm text-muted-foreground flex items-center gap-2">
+                    <CalendarDays size={16} />
+                    {job.duration}
+                  </p>
+                </p>
+
+                <p className="text-sm text-muted-foreground mt-1 sm:max-w-sm md:min-w-[600px]">
+                  {job.project}
                 </p>
               </li>
             ))}
@@ -210,71 +266,70 @@ const ProfilePage = () => {
           </ul>
         </div>
 
-        {/* Products Section */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-semibold">My Projects</h2>
+        {/* My Github Section */}
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold flex items-center gap-2">
+            <Github className="text-primary" /> My GitHub Projects
+          </h2>
           <hr />
-          {/* product-1 */}
-          <Card className="product-1 mt-6">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold">QA PlayGround</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                A comprehensive and visually appealing one stop solution for
-                learning automation testing. Having built in support for
-                different web elements and also ready made UI componets from
-                user registration to all kinds of web features.
-              </p>
-              <Button className="mt-4">View Product</Button>
-            </CardContent>
-          </Card>
-
-          {/* product-2 */}
-          <Card className="product-2 mt-6">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold">Random Coders Blog</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                A comprehensive and visually appealing one stop solution for
-                learning automation testing. Having built in support for
-                different web elements and also ready made UI componets from
-                user registration to all kinds of web features.
-              </p>
-              <Button className="mt-4">View Product</Button>
-            </CardContent>
-          </Card>
-
-          {/* product-3 */}
-          <Card className="product-3 mt-6">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold">Expense Tracker</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                A comprehensive and visually appealing one stop solution for
-                learning automation testing. Having built in support for
-                different web elements and also ready made UI componets from
-                user registration to all kinds of web features.
-              </p>
-              <Link
-                href="https://balance-sheet-app.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {myGithub.map((repo, index) => (
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow duration-300 border-primary border-l-4"
               >
-                <Button className="mt-4">View Product</Button>
-              </Link>
-            </CardContent>
-          </Card>
+                <CardContent className="p-5 flex flex-col h-full">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Github className="text-primary" size={20} />
+                    <h3 className="font-bold text-lg">{repo.name}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground flex-1">
+                    {repo.description}
+                  </p>
+                  <div className="mt-4 flex gap-2">
+                    <Link
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button
+                        variant="outline"
+                        className="w-full flex items-center gap-2"
+                      >
+                        <Github size={16} />
+                        View on GitHub
+                      </Button>
+                    </Link>
+                    <Link
+                      href={repo.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button
+                        variant="secondary"
+                        className="w-full flex items-center gap-2"
+                      >
+                        <Globe size={16} />
+                        Live Project
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-          {/* product-4 */}
-          <Card className="product-4 mt-6">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold">Weather App</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                A comprehensive and visually appealing one stop solution for
-                learning automation testing. Having built in support for
-                different web elements and also ready made UI componets from
-                user registration to all kinds of web features.
-              </p>
-              <Button className="mt-4">View Product</Button>
-            </CardContent>
-          </Card>
+        {/* Education Section */}
+        <div className="mt-6">
+          <h2 className="text-2xl font-semibold">Education</h2>
+          <hr />
+          <p className="text-sm text-muted-foreground mt-2">
+            Batchelors Of Engg From - Gov. College Of Engg. & Research, Awsari
+            Pune | 2017
+          </p>
         </div>
       </div>
     </div>
