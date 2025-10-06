@@ -103,16 +103,6 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           {/* Head tag */}
-          <head>
-            <script
-              src="https://cmp.gatekeeperconsent.com/min.js"
-              data-cfasync="false"
-            ></script>
-            <script
-              src="https://the.gatekeeperconsent.com/cmp.min.js"
-              data-cfasync="false"
-            ></script>
-          </head>
 
           {/* Header/Navbar */}
           <Header />
@@ -130,13 +120,6 @@ export default function RootLayout({ children }) {
 
           {/* Vercel Analytics */}
           <Analytics />
-
-          {/* Ezoic scripts */}
-          <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-          <script>
-            window.ezstandalone = window.ezstandalone || {}; ezstandalone.cmd =
-            ezstandalone.cmd || [];
-          </script>
 
           {/* Footer */}
           <footer className="bg-[#F3F4F6] dark:bg-[#1F2227] p-1 pt-8">
