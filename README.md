@@ -48,6 +48,35 @@ IWebElement button = driver.FindElement(By.XPath("//h1"));
 button.Click();
 ```
 
+## For Developers & AI Agents
+
+### Codebase Understanding
+
+This project includes comprehensive documentation for AI agents and developers:
+
+- **`AI_AGENT_RULES.md`** - Detailed rules and patterns for understanding the codebase architecture
+- **`.ai-project-config.json`** - Machine-readable configuration for automated code analysis
+- **Component Patterns** - Standardized structure for practice components and pages
+- **Routing Convention** - Next.js App Router with route groups and dynamic routing
+
+### Key Architecture Points
+
+- **Framework**: Next.js 15.1.2 with App Router
+- **UI**: Tailwind CSS + Radix UI + shadcn/ui components
+- **Content**: Markdown-based blog system with frontmatter
+- **Structure**: Route groups for organization (admin, blog, practice)
+- **Testing Focus**: Interactive elements designed for automation testing practice
+
+### Development Guidelines
+
+All components follow established patterns documented in `AI_AGENT_RULES.md`. When contributing:
+
+1. Follow the component structure patterns
+2. Use Tailwind CSS for styling
+3. Maintain accessibility standards
+4. Include proper SEO metadata
+5. Test with automation tools in mind
+
 ## Contributing
 
 If you'd like to contribute additional test scenarios, please submit a pull request.

@@ -1,0 +1,171 @@
+{
+  "projectName": "QA Testing Playground",
+  "framework": "Next.js",
+  "version": "15.1.2",
+  "architecture": "App Router",
+  "primaryLanguage": "JavaScript/JSX",
+  "styling": "Tailwind CSS",
+  "uiLibrary": "Radix UI + shadcn/ui",
+
+  "directoryStructure": {
+    "app": {
+      "description": "Next.js App Router directory",
+      "contains": ["pages", "layouts", "route groups"],
+      "routeGroups": {
+        "(admin)": "Administrative pages",
+        "(blog)": "Blog-related pages",
+        "(Practice)": "Practice and learning content"
+      }
+    },
+    "components": {
+      "description": "Reusable React components",
+      "subdirectories": {
+        "ui": "Base UI components (shadcn/ui)",
+        "lib": "Utility and helper components"
+      }
+    },
+    "data": {
+      "description": "Configuration and static data files",
+      "fileTypes": "JavaScript modules with exported objects"
+    },
+    "Blog": {
+      "description": "Markdown blog content",
+      "structure": "Category-based subdirectories"
+    },
+    "public": {
+      "description": "Static assets",
+      "contains": ["images", "icons", "documents", "SEO files"]
+    }
+  },
+
+  "patterns": {
+    "practiceComponents": {
+      "structure": "Main practice area (2/3) + Insight section (1/3)",
+      "requiredSubComponents": ["QAPlayGround", "LearningInsight"],
+      "layout": "Card-based responsive layout"
+    },
+    "pageMetadata": {
+      "required": ["title", "description"],
+      "optional": ["canonical", "openGraph", "twitter"]
+    },
+    "dynamicRoutes": {
+      "pattern": "[slug]",
+      "requiresStaticParams": true,
+      "componentMapping": "Object mapping slugs to components"
+    }
+  },
+
+  "conventions": {
+    "naming": {
+      "components": "PascalCase.jsx",
+      "pages": "page.jsx or page.js",
+      "layouts": "layout.js",
+      "data": "camelCase.js"
+    },
+    "imports": {
+      "ui": "@/components/ui/component-name",
+      "custom": "@/components/ComponentName",
+      "data": "@/data/fileName",
+      "utils": "@/lib/utils"
+    },
+    "styling": {
+      "framework": "Tailwind CSS",
+      "responsive": "Mobile-first (sm:, md:, lg:)",
+      "darkMode": "class-based with next-themes"
+    }
+  },
+
+  "keyFiles": {
+    "/app/layout.js": "Root layout with global providers",
+    "/data/BasicSetting.js": "Site configuration",
+    "/components/Header.jsx": "Main navigation",
+    "/package.json": "Dependencies and scripts",
+    "tailwind.config.mjs": "Tailwind configuration",
+    "next.config.mjs": "Next.js configuration"
+  },
+
+  "dependencies": {
+    "core": ["next@^15.1.2", "react@^19.1.0", "react-dom@^19.1.0"],
+    "ui": [
+      "@radix-ui/react-*",
+      "lucide-react",
+      "tailwindcss",
+      "class-variance-authority"
+    ],
+    "content": ["gray-matter", "unified", "remark-*", "rehype-*"],
+    "utils": ["clsx", "tailwind-merge", "next-themes"]
+  },
+
+  "automationTesting": {
+    "purpose": "Educational platform for QA automation practice",
+    "elements": [
+      "buttons",
+      "inputs",
+      "selects",
+      "tables",
+      "forms",
+      "alerts",
+      "calendars",
+      "file uploads",
+      "drag-drop"
+    ],
+    "testingTools": ["Selenium", "Cypress", "Playwright"],
+    "practices": [
+      "Element interaction",
+      "Form submissions",
+      "Dynamic content handling",
+      "Page Object Model",
+      "Wait strategies"
+    ]
+  },
+
+  "codeAnalysisRules": {
+    "componentStructure": {
+      "mustHave": ["export default", "proper JSX structure"],
+      "shouldHave": ["PropTypes or TypeScript", "consistent naming"],
+      "avoid": ["inline styles", "direct DOM manipulation", "hardcoded values"]
+    },
+    "performanceRules": {
+      "images": "Use Next.js Image component",
+      "imports": "Use dynamic imports for large components",
+      "bundleSize": "Monitor and optimize bundle size"
+    },
+    "accessibilityRules": {
+      "required": [
+        "semantic HTML",
+        "proper ARIA labels",
+        "keyboard navigation"
+      ],
+      "testing": "Include accessibility testing in components"
+    }
+  },
+
+  "developmentGuidelines": {
+    "newFeatures": [
+      "1. Create component following established patterns",
+      "2. Add proper TypeScript/PropTypes if applicable",
+      "3. Include responsive design",
+      "4. Add to navigation if needed",
+      "5. Update documentation"
+    ],
+    "bugFixes": [
+      "1. Identify root cause",
+      "2. Write test to reproduce",
+      "3. Fix with minimal changes",
+      "4. Verify fix doesn't break other functionality"
+    ],
+    "refactoring": [
+      "1. Maintain existing API",
+      "2. Preserve functionality",
+      "3. Improve performance/readability",
+      "4. Update tests and documentation"
+    ]
+  },
+
+  "quality": {
+    "linting": "ESLint with Next.js configuration",
+    "formatting": "Prettier (if configured)",
+    "testing": "Manual testing for UI components",
+    "performance": "Core Web Vitals optimization"
+  }
+}
