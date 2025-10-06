@@ -18,6 +18,16 @@ const nextConfig = {
       bodySizeLimit: "5mb",
     },
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/ads.txt",
+        destination: "https://srv.adstxtmanager.com/19390/qaplayground.com",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

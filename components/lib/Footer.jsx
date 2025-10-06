@@ -23,7 +23,7 @@ const Footer = () => {
           Contact Us
         </a>
         <a href="/privacy-policy" className="hover:text-blue-600">
-          Pricay Policy
+          Privacy Policy
         </a>
       </div>
       <div
