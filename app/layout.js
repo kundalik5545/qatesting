@@ -6,6 +6,7 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/lib/theme-provider";
 import Footer from "@/components/lib/Footer";
 import { basicDetails } from "@/data/BasicSetting";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -114,6 +115,9 @@ export default function RootLayout({ children }) {
 
           {/* Toaster Notifications */}
           <Toaster richColors />
+
+          {/* Vercel Analytics */}
+          <Analytics />
 
           {/* Footer */}
           <footer className="bg-[#F3F4F6] dark:bg-[#1F2227] p-1 pt-8">
