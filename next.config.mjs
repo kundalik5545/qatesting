@@ -23,7 +23,7 @@ const nextConfig = {
     return [
       {
         source: "/ads.txt",
-        destination: "https://srv.adstxtmanager.com/19390/qaplayground.com",
+        destination: "https://srv.adstxtmanager.com/600218/qaplayground.com",
         permanent: true,
       },
     ];
