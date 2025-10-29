@@ -66,4 +66,17 @@ export const blogs = [
     isBlog: "Yes",
     mainPageLink: "/learn",
   },
+  {
+    id: 6,
+    title: "Complete javascript syllabus to study",
+    description: "Javascript syllabus with important topics list.",
+    author: "random coders",
+    date: "05 Sep 2025",
+    category: ["automation", "tools"],
+    image: "/Images/blogs/bp-5-1.webp",
+    keywords: "js syllabus",
+    slug: "javascript-syllabus",
+    isBlog: "Yes",
+    mainPageLink: "/learn",
+  },
 ];
