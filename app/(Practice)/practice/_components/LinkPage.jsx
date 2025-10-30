@@ -13,8 +13,55 @@ import {
 } from "@/components/ui/table";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { GraduationCap } from "lucide-react";
 
 const LinksPage = () => {
+  const youtubeLink = "";
+
+  return (
+    <div className="pt-2">
+      {/* Heading */}
+      <h2 className="text-2xl md:text-3xl lg:text-4xl pb-4 font-semibold text-gray-900 dark:text-white text-start transition-all duration-300 ease-in-out">
+        Link
+      </h2>
+      {/* Main layout */}
+      <div className="flex flex-col sm:flex-row w-full gap-8">
+        {/* Main Card Section */}
+        <div className="w-full sm:w-2/3 pb-5 md:pb-0">
+          <QAPlayGround />
+        </div>
+
+        {/* Insight Card */}
+        <div className="w-full sm:w-1/3">
+          <Card className="w-full shadow-lg rounded-xl dark:bg-gray-800">
+            <CardHeader className="flex flex-row items-center justify-between p-4 shadow-md dark:shadow-gray-800">
+              <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                Insight
+              </p>
+              <GraduationCap className="text-gray-700 dark:text-teal-300" />
+            </CardHeader>
+            <CardContent>
+              <LearningInsight />
+            </CardContent>
+            <CardFooter>
+              <Link href={youtubeLink}>Watch tutorial</Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LinksPage;
+
+const QAPlayGround = () => {
   const [statusCode, setSatusCode] = useState();
   const [statusText, setSatusText] = useState();
 
@@ -179,11 +226,10 @@ const LinksPage = () => {
       variant: "outline",
     },
   ];
-
   return (
-    <div className="max-w-5xl mx-auto">
+    <>
       {/* Main Section */}
-      <section className="max-w-3xl border p-4 shadow-md rounded-md flex flex-col">
+      <section className="max-w-3xl border p-4 shadow-md rounded-md flex flex-col my-3">
         <h3 className="text-xl py-3">01 Internal Following Links</h3>
         <Link href="/" className="text-blue-600 underline">
           Home
@@ -327,8 +373,21 @@ const LinksPage = () => {
           </TableBody>
         </Table>
       </section>
-    </div>
+    </>
   );
 };
 
-export default LinksPage;
+const LearningInsight = () => {
+  return (
+    <>
+      <ol className="font-light list-decimal pl-6 text-left space-y-1">
+        <li>accept()</li>
+        <li>dismiss()</li>
+        <li>waits()</li>
+        <li>sendKeys()</li>
+        <li>switchTo()</li>
+        <li>getText()</li>
+      </ol>
+    </>
+  );
+};
