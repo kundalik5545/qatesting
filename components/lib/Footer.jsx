@@ -13,7 +13,7 @@ const Footer = () => {
         </p>
       </div>
       <div className="contact-us flex gap-3 underline ">
-        <a href="/about-me" className="hover:text-blue-600">
+        <a href="/about-me" hidden className="hover:text-blue-600">
           About Me
         </a>
         <a href="/about-us" className="hover:text-blue-600">
