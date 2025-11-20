@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Demo - Accounts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="accounts-page">
+    <nav class="navbar" id="main-navbar" data-testid="main-navbar">
+        <div class="navbar-brand">
+            <span class="logo-icon">🏦</span>
+            <span class="brand-name" id="brand-name">SecureBank</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link" id="nav-dashboard" data-testid="nav-dashboard">
+                    📊 Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="accounts.html" class="nav-link active" id="nav-accounts" data-testid="nav-accounts">
+                    💳 Accounts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="transactions.html" class="nav-link" id="nav-transactions" data-testid="nav-transactions">
+                    💸 Transactions
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-actions">
+            <span class="user-info" id="user-info" data-testid="user-info">
+                👤 <span id="username-display">Admin</span>
+            </span>
+            <button id="logout-btn" class="btn btn-logout" data-testid="logout-button" data-action="logout">
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title" id="page-title" data-testid="page-title">Manage Accounts</h1>
+            <button id="add-account-btn" class="btn btn-primary" data-testid="add-account-button"
+                data-action="add-account">
+                ➕ Add New Account
+            </button>
+        </header>
+
+        <section class="filters-section" id="filters-section">
+            <div class="filter-group">
+                <label for="search-input" class="filter-label">Search:</label>
+                <input type="text" id="search-input" class="filter-input" placeholder="Search by account name or number"
+                    data-testid="search-input" data-filter="search" />
+            </div>
+
+            <div class="filter-group">
+                <label for="filter-type" class="filter-label">Account Type:</label>
+                <select id="filter-type" class="filter-select" data-testid="filter-type-select" data-filter="type">
+                    <option value="all" selected>All Types</option>
+                    <option value="savings">Savings</option>
+                    <option value="checking">Checking</option>
+                    <option value="credit">Credit</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="sort-by" class="filter-label">Sort By:</label>
+                <select id="sort-by" class="filter-select" data-testid="sort-by-select" data-sort="field">
+                    <option value="name">Account Name</option>
+                    <option value="balance">Balance</option>
+                    <option value="date">Date Created</option>
+                </select>
+            </div>
+
+            <button id="reset-filters-btn" class="btn btn-secondary" data-testid="reset-filters-button">
+                Reset Filters
+            </button>
+        </section>
+
+        <section class="accounts-table-section">
+            <div class="table-container">
+                <table class="data-table" id="accounts-table" data-testid="accounts-table">
+                    <thead>
+                        <tr>
+                            <th data-column="number">Account Number</th>
+                            <th data-column="name">Account Name</th>
+                            <th data-column="type">Type</th>
+                            <th data-column="balance">Balance</th>
+                            <th data-column="status">Status</th>
+                            <th data-column="actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="accounts-tbody" data-testid="accounts-tbody">
+                        <tr class="empty-state" id="empty-accounts">
+                            <td colspan="6" class="text-center">No accounts found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Account Modal -->
+    <div id="account-modal" class="modal" data-testid="account-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" data-testid="modal-title">Add New Account</h2>
+                <button id="close-modal" class="close-btn" data-testid="close-modal-button" aria-label="Close modal">
+                    ✕
+                </button>
+            </div>
+
+            <form id="account-form" class="account-form" data-testid="account-form">
+                <input type="hidden" id="account-id" name="accountId" />
+
+                <div class="form-group">
+                    <label for="account-name" class="form-label">Account Name *</label>
+                    <input type="text" id="account-name" name="accountName" class="form-input"
+                        placeholder="e.g., My Savings Account" data-testid="account-name-input" required />
+                    <span class="error-message" id="account-name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="account-type" class="form-label">Account Type *</label>
+                    <select id="account-type" name="accountType" class="form-select" data-testid="account-type-select"
+                        required>
+                        <option value="">Select account type</option>
+                        <option value="savings">Savings Account</option>
+                        <option value="checking">Checking Account</option>
+                        <option value="credit">Credit Card</option>
+                    </select>
+                    <span class="error-message" id="account-type-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="initial-balance" class="form-label">Initial Balance *</label>
+                    <input type="number" id="initial-balance" name="initialBalance" class="form-input"
+                        placeholder="0.00" step="0.01" min="0" data-testid="initial-balance-input" required />
+                    <span class="error-message" id="initial-balance-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="account-status" class="form-label">Status</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="accountStatus" value="active" id="status-active"
+                                data-testid="status-active-radio" checked />
+                            Active
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="accountStatus" value="inactive" id="status-inactive"
+                                data-testid="status-inactive-radio" />
+                            Inactive
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="enable-overdraft" name="enableOverdraft" class="form-checkbox"
+                        data-testid="overdraft-checkbox" />
+                    <label for="enable-overdraft" class="checkbox-label">Enable Overdraft Protection</label>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" id="save-account-btn" class="btn btn-primary"
+                        data-testid="save-account-button">
+                        Save Account
+                    </button>
+                    <button type="button" id="cancel-btn" class="btn btn-secondary" data-testid="cancel-button">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal" data-testid="delete-modal" style="display: none;">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2 data-testid="delete-modal-title">Confirm Delete</h2>
+            </div>
+            <div class="modal-body">
+                <p id="delete-message" data-testid="delete-message">
+                    Are you sure you want to delete this account?
+                </p>
+                <p class="warning-text">This action cannot be undone.</p>
+            </div>
+            <div class="modal-actions">
+                <button id="confirm-delete-btn" class="btn btn-danger" data-testid="confirm-delete-button">
+                    Delete
+                </button>
+                <button id="cancel-delete-btn" class="btn btn-secondary" data-testid="cancel-delete-button">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="accounts.js"></script>
+    <script>
+        // Check authentication
+        const currentUser = sessionStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('username-display').textContent = currentUser;
+
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', function () {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Demo - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="logo-icon" data-testid="bank-logo">🏦</div>
+                <h1 class="app-title" id="app-title">SecureBank Demo</h1>
+                <p class="app-subtitle" id="app-subtitle">Automation Testing Practice Application</p>
+            </div>
+
+            <form id="login-form" class="login-form" name="loginForm" data-testid="login-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        class="form-input"
+                        placeholder="Enter your username"
+                        data-testid="username-input"
+                        data-field="username"
+                        autocomplete="username"
+                        required
+                    />
+                    <span class="error-message" id="username-error" data-testid="username-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input"
+                            placeholder="Enter your password"
+                            data-testid="password-input"
+                            data-field="password"
+                            autocomplete="current-password"
+                            required
+                        />
+                        <button 
+                            type="button" 
+                            id="toggle-password" 
+                            class="toggle-password"
+                            data-testid="toggle-password-btn"
+                            aria-label="Toggle password visibility"
+                        >
+                            👁️
+                        </button>
+                    </div>
+                    <span class="error-message" id="password-error" data-testid="password-error"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="remember-me" 
+                        name="rememberMe"
+                        class="form-checkbox"
+                        data-testid="remember-checkbox"
+                    />
+                    <label for="remember-me" class="checkbox-label">Remember me</label>
+                </div>
+
+                <div class="alert-box" id="login-alert" data-testid="login-alert" style="display: none;">
+                    <span class="alert-icon">⚠️</span>
+                    <span class="alert-message" id="alert-message"></span>
+                </div>
+
+                <button 
+                    type="submit" 
+                    id="login-btn" 
+                    class="btn btn-primary"
+                    data-testid="login-button"
+                    data-action="login"
+                >
+                    Login
+                </button>
+
+                <button 
+                    type="button" 
+                    id="clear-btn" 
+                    class="btn btn-secondary"
+                    data-testid="clear-button"
+                    data-action="clear"
+                >
+                    Clear
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p class="demo-credentials" id="demo-credentials">
+                    <strong>Demo Credentials:</strong><br>
+                    Username: <code data-testid="demo-username">admin</code><br>
+                    Password: <code data-testid="demo-password">admin123</code>
+                </p>
+            </div>
+        </div>
+
+        <div class="theme-toggle-container">
+            <button 
+                id="theme-toggle" 
+                class="theme-toggle"
+                data-testid="theme-toggle"
+                aria-label="Toggle theme"
+            >
+                🌙
+            </button>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Toggle password visibility
+        document.getElementById('toggle-password').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+
+        // Clear form
+        document.getElementById('clear-btn').addEventListener('click', function() {
+            document.getElementById('login-form').reset();
+            document.getElementById('login-alert').style.display = 'none';
+            document.getElementById('username-error').textContent = '';
+            document.getElementById('password-error').textContent = '';
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            this.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Input validation on blur
+        document.getElementById('username').addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                document.getElementById('username-error').textContent = 'Username is required';
+            } else {
+                document.getElementById('username-error').textContent = '';
+            }
+        });
+
+        document.getElementById('password').addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                document.getElementById('password-error').textContent = 'Password is required';
+            } else {
+                document.getElementById('password-error').textContent = '';
+            }
+        });
+
+        // Input event for real-time validation
+        document.getElementById('username').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('username-error').textContent = '';
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('password-error').textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

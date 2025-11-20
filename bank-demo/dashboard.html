@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Demo - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-page">
+    <nav class="navbar" id="main-navbar" data-testid="main-navbar">
+        <div class="navbar-brand">
+            <span class="logo-icon">🏦</span>
+            <span class="brand-name" id="brand-name">SecureBank</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link active" id="nav-dashboard" data-testid="nav-dashboard">
+                    📊 Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="accounts.html" class="nav-link" id="nav-accounts" data-testid="nav-accounts">
+                    💳 Accounts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="transactions.html" class="nav-link" id="nav-transactions" data-testid="nav-transactions">
+                    💸 Transactions
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-actions">
+            <span class="user-info" id="user-info" data-testid="user-info">
+                👤 <span id="username-display">Admin</span>
+            </span>
+            <button id="logout-btn" class="btn btn-logout" data-testid="logout-button" data-action="logout">
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title" id="page-title" data-testid="page-title">Dashboard</h1>
+            <p class="page-subtitle" id="welcome-message" data-testid="welcome-message">
+                Welcome back, <span id="user-name">Admin</span>!
+            </p>
+        </header>
+
+        <section class="summary-section" id="summary-section">
+            <div class="summary-card" id="total-balance-card" data-testid="total-balance-card">
+                <div class="card-icon">💰</div>
+                <div class="card-content">
+                    <h3 class="card-label">Total Balance</h3>
+                    <p class="card-value" id="total-balance" data-testid="total-balance">$0.00</p>
+                </div>
+            </div>
+
+            <div class="summary-card" id="accounts-count-card" data-testid="accounts-count-card">
+                <div class="card-icon">💳</div>
+                <div class="card-content">
+                    <h3 class="card-label">Active Accounts</h3>
+                    <p class="card-value" id="accounts-count" data-testid="accounts-count">0</p>
+                </div>
+            </div>
+
+            <div class="summary-card" id="transactions-count-card" data-testid="transactions-count-card">
+                <div class="card-icon">📈</div>
+                <div class="card-content">
+                    <h3 class="card-label">Total Transactions</h3>
+                    <p class="card-value" id="transactions-count" data-testid="transactions-count">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-actions-section" id="quick-actions">
+            <h2 class="section-title">Quick Actions</h2>
+            <div class="action-buttons">
+                <button id="add-account-quick" class="btn btn-action" data-testid="quick-add-account"
+                    data-action="add-account">
+                    ➕ Add Account
+                </button>
+                <button id="new-transaction-quick" class="btn btn-action" data-testid="quick-new-transaction"
+                    data-action="new-transaction">
+                    💸 New Transaction
+                </button>
+                <button id="view-all-accounts" class="btn btn-action" data-testid="quick-view-accounts"
+                    data-action="view-accounts">
+                    📋 View All Accounts
+                </button>
+            </div>
+        </section>
+
+        <section class="recent-transactions-section" id="recent-transactions-section">
+            <h2 class="section-title">Recent Transactions</h2>
+            <div class="table-container">
+                <table class="data-table" id="recent-transactions-table" data-testid="recent-transactions-table">
+                    <thead>
+                        <tr>
+                            <th data-column="date">Date</th>
+                            <th data-column="type">Type</th>
+                            <th data-column="account">Account</th>
+                            <th data-column="amount">Amount</th>
+                            <th data-column="status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-tbody" data-testid="transactions-tbody">
+                        <tr class="empty-state" id="empty-transactions">
+                            <td colspan="5" class="text-center">No transactions yet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="accounts-overview-section" id="accounts-overview">
+            <h2 class="section-title">Accounts Overview</h2>
+            <div id="accounts-list" class="accounts-grid" data-testid="accounts-grid">
+                <div class="empty-state-card" id="empty-accounts">
+                    <p>No accounts found. Create your first account!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer" id="app-footer">
+        <p>&copy; 2025 SecureBank Demo - For Testing Purposes Only</p>
+    </footer>
+
+    <script src="storage.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+        // Check authentication
+        const currentUser = sessionStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        }
+
+        // Display username
+        document.getElementById('username-display').textContent = currentUser;
+        document.getElementById('user-name').textContent = currentUser;
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', function () {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Quick actions
+        document.getElementById('add-account-quick').addEventListener('click', function () {
+            window.location.href = 'accounts.html?action=add';
+        });
+
+        document.getElementById('new-transaction-quick').addEventListener('click', function () {
+            window.location.href = 'transactions.html?action=new';
+        });
+
+        document.getElementById('view-all-accounts').addEventListener('click', function () {
+            window.location.href = 'accounts.html';
+        });
+
+        // Theme toggle
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+
+</html>
