@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import BankNavbar from '@/components/bank/BankNavbar';
 import { Button } from '@/components/ui/button';
@@ -16,7 +16,7 @@ import { Badge } from '@/components/ui/badge';
 import { getAccounts, getTransactions, saveTransaction, updateAccountBalance, getAccountById, filterTransactions, formatCurrency, formatDateTime, initializeData } from '@/lib/bankStorage';
 import { Plus, Download, AlertCircle } from 'lucide-react';
 
-export default function TransactionsPage() {
+function TransactionsContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [username, setUsername] = useState('Admin');
@@ -350,7 +350,7 @@ export default function TransactionsPage() {
                                             <TableCell data-testid="transaction-date">{formatDateTime(transaction.date)}</TableCell>
                                             <TableCell data-testid="transaction-type">
                                                 <span className={`font-medium ${transaction.type === 'deposit' ? 'text-green-600' :
-                                                        transaction.type === 'withdrawal' ? 'text-red-600' : 'text-blue-600'
+                                                    transaction.type === 'withdrawal' ? 'text-red-600' : 'text-blue-600'
                                                     }`}>
                                                     {getTransactionIcon(transaction.type)} {transaction.type.charAt(0).toUpperCase() + transaction.type.slice(1)}
                                                 </span>
@@ -516,5 +516,13 @@ export default function TransactionsPage() {
                 </DialogContent>
             </Dialog>
         </div>
+    );
+}
+
+export default function TransactionsPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center">Loading...</div>}>
+            <TransactionsContent />
+        </Suspense>
     );
 }
