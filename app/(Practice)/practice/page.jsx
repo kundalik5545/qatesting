@@ -10,11 +10,11 @@ import React from "react";
 
 const allElements = [
   {
-    title: "Elements",
+    title: "POM",
     logo: "/mainicons/edit.svg",
-    Description: "Practice Page Object Model with fakestore",
+    Description: "Practice Page Object Model with fake bank",
     footerTitle: "Page Object Model",
-    link: "/practice/pom",
+    link: "/bank",
   },
   {
     title: "Input",
@@ -128,19 +128,19 @@ const allElements = [
     footerTitle: "Simple Table",
     link: "/practice/simple-table",
   },
+  // {
+  //   title: "Table",
+  //   logo: "/mainicons/simtable.svg",
+  //   Description: "It's little complicated but give a try",
+  //   footerTitle: "Advance Table",
+  //   link: "/practice/advance-table",
+  // },
   {
-    title: "Table",
+    title: "Advance Table",
     logo: "/mainicons/simtable.svg",
     Description: "It's little complicated but give a try",
     footerTitle: "Advance Table",
     link: "/practice/advance-table",
-  },
-  {
-    title: "Table",
-    logo: "/mainicons/simtable.svg",
-    Description: "It's little complicated but give a try",
-    footerTitle: "Test Table",
-    link: "/practice/test",
   },
   {
     title: "Calendar",
@@ -193,7 +193,7 @@ const PracticePage = () => {
               >
                 <CardHeader className="flex flex-row items-center justify-between p-1 shadow-lg dark:shadow-md dark:shadow-gray-800  space-y-0">
                   <p className="px-2 text-xl font-semibold">{el.title}</p>
-                  <Image src={el.logo} width={50} height={50} className="p-1" />
+                  <Image src={el.logo} width={50} height={50} className="p-1" alt={el.title} />
                 </CardHeader>
                 <CardContent className="p-3 h-28">
                   <p className="py-7 text-base dark:text-gray-200 text-center">

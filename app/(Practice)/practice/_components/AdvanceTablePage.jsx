@@ -28,7 +28,7 @@ const fetchData = async () => {
   return data.data;
 };
 
-export default function DataTable() {
+export default function AdvanceTablePage() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [sortField, setSortField] = useState("title");
