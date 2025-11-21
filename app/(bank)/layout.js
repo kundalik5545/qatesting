@@ -21,7 +21,7 @@ export default function BankLayout({ children }) {
     }, [isLoginPage]);
 
     return (
-        <div className="bank-app min-h-screen">
+        <div className="bank-app min-h-screen container mx-auto max-w-5xl">
             {children}
         </div>
     );

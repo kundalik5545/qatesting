@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import BankNavbar from '@/components/bank/BankNavbar';
 import { Button } from '@/components/ui/button';
@@ -16,7 +16,7 @@ import { Badge } from '@/components/ui/badge';
 import { getAccounts, saveAccount, deleteAccount, formatCurrency, initializeData } from '@/lib/bankStorage';
 import { Plus, Pencil, Trash2, Search } from 'lucide-react';
 
-export default function AccountsPage() {
+function AccountsContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [username, setUsername] = useState('Admin');
@@ -470,5 +470,13 @@ export default function AccountsPage() {
                 </AlertDialogContent>
             </AlertDialog>
         </div>
+    );
+}
+
+export default function AccountsPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center">Loading...</div>}>
+            <AccountsContent />
+        </Suspense>
     );
 }

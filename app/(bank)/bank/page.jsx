@@ -92,7 +92,7 @@ export default function BankLoginPage() {
     if (!mounted) return null;
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600">
+        <div className="min-h-screen flex items-center justify-center p-4">
             <div className="w-full max-w-md">
                 <Card className="backdrop-blur-sm bg-card/95 shadow-2xl">
                     <CardHeader className="text-center space-y-4">
