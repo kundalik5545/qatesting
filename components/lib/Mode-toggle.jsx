@@ -14,15 +14,26 @@ export function ModeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Prevents hydration mismatch
+  if (!mounted) {
+    return (
+      <div>
+        <Button size="icon" variant="ghost" disabled>
+          <Moon />
+        </Button>
+      </div>
+    );
+  }
+
+  // Use resolvedTheme to reliably get theme value after hydration
+  const currentTheme = resolvedTheme || theme;
 
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
     >
-      {resolvedTheme === "dark" ? (
+      {currentTheme === "dark" ? (
         <Sun className="h-5 w-5 text-yellow-500 transition-transform duration-300 rotate-0 scale-100" />
       ) : (
         <Moon className="h-5 w-5 text-gray-900 dark:text-gray-300 transition-transform duration-300 rotate-0 scale-100" />
