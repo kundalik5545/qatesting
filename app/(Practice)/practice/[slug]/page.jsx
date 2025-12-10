@@ -22,7 +22,8 @@ import ElementsPage from "../_components/ElementsPage";
 import InputPage from "../_components/InputPage";
 import ButtonPage from "../_components/ButtonPage";
 import SelectPage from "../_components/SelectPage";
-import LinksPage from "../_components/LinksPage";
+// import LinksPage from "../_components/LinksPage";
+import LinksPage from "../_components/LinkPage";
 import AlertPage from "../_components/AlertPage";
 import RadioButtonPage from "../_components/RadioButton";
 import WindowsPage from "../_components/WindowsPage";
@@ -30,7 +31,7 @@ import WaitPage from "../_components/WaitPage";
 import FilePage from "../_components/FileUploadDownloadPage";
 import CalendarPage from "../_components/CalendarPage";
 import SimpleTablePage from "../_components/TablePage";
-import DataTable from "../_components/TestTablePage";
+import AdvanceTablePage from "../_components/AdvanceTablePage";
 
 // Blog Slug to Component Mapping
 const componentMapping = {
@@ -46,7 +47,7 @@ const componentMapping = {
   calendar: CalendarPage,
   "upload-download": FilePage,
   "simple-table": SimpleTablePage,
-  test: DataTable,
+  "advance-table": AdvanceTablePage,
 };
 
 // Fetch all blog slugs dynamically

@@ -23,7 +23,7 @@ const Footer = () => {
           Contact Us
         </a>
         <a href="/privacy-policy" className="hover:text-blue-600">
-          Pricay Policy
+          Privacy Policy
         </a>
       </div>
       <div
@@ -33,7 +33,7 @@ const Footer = () => {
         <span>© 2025 {basicDetails.websiteName}. </span>
         <span>Created by </span>
         <Link
-          href="https://github.com/kundalik5545"
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#f18b42] hover:text-[#e07b35] transition-colors"

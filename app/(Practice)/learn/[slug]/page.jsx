@@ -1,21 +1,21 @@
+import { Badge } from "@/components/ui/badge";
+import { basicDetails } from "@/data/BasicSetting";
+import { cn } from "@/lib/utils";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import { Calendar } from "lucide-react";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { unified } from "unified";
+import path from "path";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import rehypeSlug from "rehype-slug";
-import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import Image from "next/image";
-import { basicDetails } from "@/data/BasicSetting";
-import { Calendar } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { unified } from "unified";
 
 // Blog Components
 import CoursesPage from "../_components/CoursesPage";

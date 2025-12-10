@@ -13,6 +13,7 @@ const Header = () => {
     { to: "/", text: "Home" },
     { to: "/blog", text: "Blog" },
     { to: "/contact-us", text: "Contact" },
+    { to: "/bank", text: "Bank" },
     { to: "/practice", text: "Practice" },
   ];
 

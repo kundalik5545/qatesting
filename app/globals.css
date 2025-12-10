@@ -34,6 +34,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -66,6 +67,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -77,6 +79,7 @@ body {
   .gradient {
     @apply bg-gradient-to-br from-blue-600 to-purple-600;
   }
+
   .gradient-sub {
     @apply bg-gradient-to-br from-red-600 to-purple-600;
   }
@@ -84,6 +87,7 @@ body {
   .gradient-title {
     @apply gradient font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
   }
+
   .gradient-subTitle {
     @apply gradient-sub font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
   }
@@ -124,4 +128,16 @@ body {
 
 .dark .prose th {
   background-color: #333;
+}
+
+/* Bank App Specific Styles */
+body.bank-page header:not([id="main-navbar"]),
+body.bank-page footer:not([id="app-footer"]) {
+  display: none !important;
+}
+
+body.bank-page main {
+  padding: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
 }

@@ -65,18 +65,7 @@ export default WaitPage;
 const QAPlayGround = () => {
   return (
     <>
-      <p className="waitTillAlert">Wait for 2 Sec until alert is visible.</p>
-      <Button
-        onClick={() => {
-          setTimeout(() => {
-            alert(
-              "✅ Appreciate you waiting! I had to negotiate a peace treaty with my 🕓 alarm clock."
-            );
-          }, 2000);
-        }}
-      >
-        Simple Alert
-      </Button>
+      <SimpleAlert />
       <p className="mt-2">
         Handle element is visible with explicit and implicit waits
         <ol>
@@ -101,3 +90,24 @@ const LearningInsight = () => {
     </>
   );
 };
+
+const SimpleAlert = () => {
+  return (
+    <>
+      <p className="waitTillAlert">Wait for 2 Sec until alert is visible.</p>
+      <Button
+        onClick={() => {
+          setTimeout(() => {
+            alert(
+              "✅ Appreciate you waiting! I had to negotiate a peace treaty with my 🕓 alarm clock."
+            );
+          }, 2000);
+        }}
+      >
+        Simple Alert
+      </Button>
+    </>
+  );
+};
+
+// Alert

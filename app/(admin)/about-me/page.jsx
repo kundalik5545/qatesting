@@ -101,6 +101,13 @@ const ProfilePage = () => {
 
   const myGithub = [
     {
+      name: "Ai Website Generator",
+      description:
+        "Create stunning websites in minutes with our AI Website Generator. Powered by Next.js and Tailwind CSS, it offers customizable templates and seamless deployment.",
+      url: "https://github.com/kundalik5545/ai-website-generator",
+      liveUrl: "https://free-ai-website-generator.vercel.app/",
+    },
+    {
       name: "QA PlayGround",
       description:
         "A comprehensive automation testing platform with interactive labs, real-world scenarios, and built-in UI components for hands-on learning.",
@@ -120,13 +127,6 @@ const ProfilePage = () => {
         "A full-stack MERN application for managing and visualizing XPath queries, demonstrating best practices in React, Node.js, and MongoDB.",
       url: "https://github.com/kundalik5545/qa-xpath",
       liveUrl: "https://qa-xpath.vercel.app/",
-    },
-    {
-      name: "Expense Tracker",
-      description:
-        "A full-stack MERN application to manage and visualize personal expenses, demonstrating best practices in React, Node.js, and MongoDB.",
-      url: "https://github.com/kundalik5545/balance-sheet",
-      liveUrl: "https://balance-sheet-app.vercel.app/",
     },
   ];
 
@@ -235,7 +235,7 @@ const ProfilePage = () => {
           <ul className="mt-4 space-y-4">
             {myExp.map((job, index) => (
               <li key={index} className="border-l-4 border-primary pl-4">
-                <p className="flex items-center justify-between">
+                <div className="flex items-center justify-between">
                   <h3 className="font-semibold ">
                     {job.role} - {job.company}
                   </h3>
@@ -243,7 +243,7 @@ const ProfilePage = () => {
                     <CalendarDays size={16} />
                     {job.duration}
                   </p>
-                </p>
+                </div>
 
                 <p className="text-sm text-muted-foreground mt-1 sm:max-w-sm md:min-w-[600px]">
                   {job.project}
